@@ -1,0 +1,21 @@
+.aboutWraper{
+    background-image: url('../../assets/bgimg/bg3.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgba(211, 211, 209, 0.725);
+}
+.identity{
+    background-color: #f7f7f7;
+    max-width: 100%;
+}
+.iconColor{
+    color: rgb(255, 200, 0);
+}
+.ourServiceBtn{
+    background-color: #f0542d;
+    color: #fff;
+    border: none;
+}
+.ourServiceBtn:hover{
+    background-color: #313131;
+}

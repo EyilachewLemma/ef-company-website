@@ -1,0 +1,25 @@
+
+.servicepage{
+    background-image: url('../../assets/bgimg/bg3.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgba(211, 211, 209, 0.725);
+}
+.seeMore{
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid rgb(255, 200, 0);
+
+}
+.seeMore:hover{
+    color: #f0542d;
+}
+/* service Detail */
+.navLink{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+.navLink:hover{
+    color: #f0542d;
+}

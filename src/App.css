@@ -1,0 +1,185 @@
+
+*{
+font-family: 'Roboto', sans-serif;
+font-family: 'Source Sans Pro', sans-serif; 
+}
+.app{
+  font-family: "Muli";
+  color: #595959;
+  background-color: #fff;
+  font-size: 16px;
+  font-size: 1.0666666667rem;
+  overflow-x: hidden;
+}
+@media (max-width: 767px) {
+  .app {
+    font-size: 14px;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #0D0845;
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+}
+/* header section */
+.contact-at-header{
+  background-color: #313131;
+}
+.navbar{
+  background-color: #f0542d;
+  /* background-color: #002347; */
+  color: #fff!important;
+  }
+  .btn-at-header{
+    background-color: #f0542d;
+    color: #fff;
+  }
+  .logo-text{
+    color: rgb(255, 166, 0);
+    margin-left: 3px;
+    text-decoration: none;
+    font-weight: bolder;
+    text-decoration: none;
+  }
+  .menu-item{
+    text-decoration: none;
+    margin-left: 1rem;
+    font-weight: bolder;
+    font-size: large;
+    color: #fff;
+  }
+  .sub-menu{
+    text-decoration: none;
+    margin-left: 1rem;
+    font-weight: bolder;
+    font-size: large;
+    color: black;
+  }
+  .menu-item:hover,.sub-menu:hover{
+    color: rgb(15, 238, 15);
+  }
+  .active-menu-item{
+    text-decoration: none;
+    margin-left: 1rem;
+    font-weight: bolder;
+    font-size: large;
+    color: rgb(15, 238, 15);
+  }
+  .dropdown-menue{
+    text-decoration: none;
+    margin-left: 1rem;
+    font-weight: bolder;
+    font-size: large;
+    color: #fff;
+    position: relative;
+  }
+  .dropdown-item-container{
+    display: none;
+    background-color: #FFF;
+    color: black;
+    padding: 5px 15px 5px 10px;
+    border-radius: 0.5rem;
+  }
+  .dropdown-menue:hover .dropdown-item-container{
+    display: block;
+    position: absolute;
+    top: 5;
+  }
+ /* company info big text */
+ .big-text{
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: "Jost", sans-serif;
+ }
+@media(max-width:768px){
+  .big-text{
+    font-size: 2rem;
+  }
+}
+  /* home page section */
+  
+  .home-page-container{
+    max-width: 100%;
+    background-image: url('./assets/bgimg/bg3.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    
+  }
+  .about-as-title-at-home{
+    color: #f0542d;
+  }
+  .contactus-btn-at-home{
+    background-color: #f0542d;
+    color: #fff;
+    border: none;
+    border-radius: 1rem;
+  }
+  .contactus-btn-at-home:hover{
+    background-color: #313131;
+    color: #fff;
+  }
+  .about-home-image{
+    height: 30rem;
+  }
+  
+  .about-home-image img{
+    height: 100%;
+  }
+  .video-iconat-home{
+    background-color: #f0542d;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    border: none;
+  }
+  .vedio-ifrem-contaner{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: #313131;;
+  }
+  .close-video-icon{
+    background-color: #f0542d;
+  }
+  @media(max-width:768px){
+    .about-home-image{
+      height: 19.5rem;
+    }
+    .about-home-image img{
+      height: 100%;
+    }
+    .video-iconat-home{
+      position: absolute;
+      top: 75%;
+      left: 40%;
+    }
+  }
+  .why-choose-us{
+    background-color: #f1f2f4;
+  }
+  .dark-blue-text{
+    color: #010648;
+  }
+
+  /* testimonial section */
+  .testimonial-container{
+    max-width: 100%;
+  }
+  .testimonial-title,.red-text{
+    color: #f0542d;
+  }
+  /* our blog at home */
+  .ourblog-conaner-athome{
+    max-width: 100%;
+    background-image: url('../src/assets/blog/bg.png');
+    background-color: #f7f7fc;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+  

@@ -1,0 +1,35 @@
+.projectWraper{
+    background-image: url('../../assets/bgimg/bg3.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+.selectionBtn{
+    background: none;
+    border: none;
+}
+.selectionBtn:hover,.selectionBtn:focus{
+    border-bottom: 2px solid #f0542d;
+}
+.card{
+    overflow: hidden;
+}
+.card img{
+    transition: all 3s;
+}
+.card img:hover{
+    transform: scale(1.3);
+}
+.navlink{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    border-bottom: 2px solid rgb(255, 191, 0);
+}
+.navlink:hover{
+    color: #f0542d;
+    border-bottom: 2px solid #f0542d;
+}
+.cardTitle:hover{
+    color: #f0542d;
+    border-bottom: 2px solid #f0542d;
+}

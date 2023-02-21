@@ -1,0 +1,41 @@
+.gallerWraper{
+    background-image: url('../../assets/bgimg/bg3.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+.selectionBtn{
+    background: none;
+    border: none;
+}
+.selectionBtn:hover,.selectionBtn:focus{
+    border-bottom: 2px solid #f0542d;
+}
+.card{
+    height: 23rem;
+    overflow: hidden;
+    position: relative;
+}
+.card img{
+    transition: all 2s;
+    min-height: 100%;
+    max-height: 100%;
+}
+.card img:hover{
+    transform: scale(1.2);
+}
+.imageDesctiption{
+    width: 0%;
+    height: 100%;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.463);
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 2s;
+    
+}
+.card:hover .imageDesctiption{    
+    width: 100%;
+    visibility: visible;
+}

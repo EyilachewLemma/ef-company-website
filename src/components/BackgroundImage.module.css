@@ -1,0 +1,18 @@
+.wraper{
+    width: 100%;
+    position: relative;
+    background-image: url('../assets/bgimg/page-title.jpg');
+    background-size: cover;
+    height: 45vh;
+
+
+}
+.titelHome{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.titelHome:hover{
+    color: #f0542d;
+}

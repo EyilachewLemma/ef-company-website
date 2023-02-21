@@ -1,0 +1,16 @@
+
+/* client home */
+.clientwraper{
+    background-image: url('../../assets/bgimg/bg3.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.clientPartner{
+    width: 90%;
+    height: 22rem;
+}
+.clientPartner img{
+    min-width: 100%;
+    min-height: 70%;
+}
