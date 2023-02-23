@@ -5,8 +5,8 @@ import styles from "./Client.module.css"
 const Client =()=>{
     return (
         <div className={styles.clientwraper}>
-        <BackgroundImage title={'Clients'} />
-       <div className="bg-white">
+        <BackgroundImage title={'Clients'} isDetail={false} longTitle='' />
+       <div className="bg-white py-lg-5">
        <div className="container py-5">
        <h1 className="py-5 text-center">Our Clients</h1>
        <Clients />

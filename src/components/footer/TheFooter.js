@@ -22,7 +22,6 @@ const TheFooter = () => {
       <div className="col-lg-4">
         <div className="d-flex">
           <img src={logo} alt="logo" style={{width:50,height:50}} />
-          <span className="ms-2 fs-2 fw-bold">EF</span>
         </div>
         <div className="text-white py-3">
           EF Architects and Engineers consulting

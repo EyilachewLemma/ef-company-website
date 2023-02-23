@@ -5,13 +5,14 @@ import About from "../pages/about/About";
 import Client from "../pages/client/Client";
 import Contact from "../pages/contact/Contact";
 import Gallery from "../pages/gallery/Gallery";
-import Policy from "../pages/policy/Policy";
+import News from "../pages/news/News";
 import Profile from "../pages/profile/Profile";
 import Project from "../pages/project/Project";
 import Service from "../pages/service/Service";
 import ServiceDetail from "../pages/service/ServiceDetail";
 import Partners from "../pages/client/Partners";
 import ErrorPage from "../pages/ErrorPage";
+import NewsDetail from "../pages/news/NewsDetail";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,7 +28,8 @@ const router = createBrowserRouter([
       { path: "service-detail", element: <ServiceDetail /> },
       { path: "project", element: <Project /> },
       { path: "gallery", element: <Gallery /> },
-      { path: "policy", element: <Policy /> },
+      { path: "news", element: <News /> },
+      { path: "news/:id", element: <NewsDetail /> },
       { path: "profile", element: <Profile /> },
     ],
   },

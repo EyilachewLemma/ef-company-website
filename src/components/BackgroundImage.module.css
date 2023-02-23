@@ -1,18 +1,34 @@
 .wraper{
     width: 100%;
     position: relative;
-    background-image: url('../assets/bgimg/page-title.jpg');
+    background-image: url('../assets/bgimg/home1.png');
     background-size: cover;
-    height: 45vh;
+    height: 30vh;
+    position: relative;
 
 
+}
+.contentContainer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.471);
 }
 .titelHome{
     text-decoration: none;
     color: #fff;
     font-size: 1.5rem;
     font-weight: bold;
+    
 }
 .titelHome:hover{
-    color: #f0542d;
+    color: #2A9BC4;
+}
+
+@media(min-width:768px){
+    .wraper{
+        height: 60vh;
+    }
 }

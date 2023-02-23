@@ -1,16 +1,38 @@
 
 /* client home */
 .clientwraper{
-    background-image: url('../../assets/bgimg/bg3.jpg');
+    background-image: url('../../assets/bgimg/bg1.jpg');
     background-size: cover;
     background-attachment: fixed;
 }
 
 .clientPartner{
-    width: 90%;
-    height: 22rem;
+    width: 80%;
+    height: 13rem;
+    margin: auto;
 }
 .clientPartner img{
     min-width: 100%;
     min-height: 70%;
+    max-height: 70%;
+}
+.title{
+    min-height: 30%;
+    max-height: 30%;
+}
+@media(min-width:768px){
+    .clientPartner{
+        width: 85%;
+        height: 17rem;
+        margin: auto;
+    }
+    .clientPartner img{
+        min-width: 100%;
+        min-height: 70%;
+        max-height: 70%;
+    }
+    .title{
+        min-height: 30%;
+        max-height: 30%;
+    }
 }

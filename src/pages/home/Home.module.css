@@ -3,7 +3,7 @@
 
 /* company info */
 .companyInfo{
-    background-color: rgba(121, 120, 120, 0.304);
+    background-color: rgba(0, 0, 0, 0.304);
 }
 
 /* testimonial */
@@ -36,10 +36,10 @@
 }
 .navlink{
     text-decoration: none;
-    color: black;
+    color: rgb(53, 52, 52);
 }
 .navlink:hover,.blogTitle:hover{
-    color: #f0542d;
+    color: #2A9BC4;
 
 }
 

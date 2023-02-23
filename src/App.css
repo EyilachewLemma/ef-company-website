@@ -22,19 +22,32 @@ h3,
 h4,
 h5,
 h6 {
-  color: #0D0845;
+  color: #2A9BC4;
   font-family: "Jost", sans-serif;
   font-weight: 600;
+}
+h6{
+  color: #122e74;
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
+}
+
+/* global colors */
+.blue-background{
+  background-color: #2A9BC4;
+  color: #fff!important;
+}
+.blue-text{
+  color: #2A9BC4;
 }
 /* header section */
 .contact-at-header{
   background-color: #313131;
 }
-.navbar{
+/* .navbar{
   background-color: #f0542d;
-  /* background-color: #002347; */
-  color: #fff!important;
-  }
+  
+  } */
   .btn-at-header{
     background-color: #f0542d;
     color: #fff;
@@ -105,16 +118,13 @@ h6 {
   
   .home-page-container{
     max-width: 100%;
-    background-image: url('./assets/bgimg/bg3.jpg');
+    background-image: url('./assets/home/home4.png');
     background-size: cover;
     background-attachment: fixed;
     
   }
-  .about-as-title-at-home{
-    color: #f0542d;
-  }
   .contactus-btn-at-home{
-    background-color: #f0542d;
+    background-color: #2A9BC4;
     color: #fff;
     border: none;
     border-radius: 1rem;
@@ -183,3 +193,34 @@ h6 {
     background-position: right;
   }
   
+  /* contact page */
+  .contact-form{
+    margin-top: 5%;
+    margin-right:5%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+  }
+  @media(min-width:768px){
+    .contact-form{
+      width: 75%;
+      margin: 10rem auto;
+      border: 0.1rem solid rgb(179, 179, 183);
+      border-radius: 2rem;
+      box-shadow: #122e74;
+      padding: 5rem;
+    }
+  }
+  .submit-btn{
+    background-color: #2A9BC4;
+    color: #fff;
+  }
+  .submit-btn:hover{
+    background-color: #313131;
+    color: #fff;
+  }
+  .red-border{
+    border-color: red;
+  }
+  .red-text{
+    color: red;
+  }

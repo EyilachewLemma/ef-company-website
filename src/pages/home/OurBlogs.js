@@ -27,18 +27,18 @@ const responsive = {
 const imageItem = (img)=>{
   return (
     <div className={styles.imageContainer}>
-   <NavLink to='/contact' className={`${styles.navlink}`}>
+   <NavLink to={`/news/${1}`} className={`${styles.navlink}`}>
    <div className={styles.innerContainer}>
    <img src={img} alt="carousel_image"  className="img-fluid"/>
    </div>
    </NavLink>
     <div className="pt-2">25 sep 2023</div>
-    <NavLink to='/contact' className={`${styles.navlink} fs-4 fw-bold`}>
+    <NavLink to={`/news/${1}`} className={`${styles.navlink} fs-4 fw-bold`}>
     Best Architecture Design
     </NavLink>
     <div>Consectetur adipiscing elit. Purusout phasellus malesuada lectus.</div>
       <div>
-      <NavLink to={'/contact'} className={`${styles.navlink} `}><u>SEE MORE</u></NavLink>
+      <NavLink to={`/news/${1}`} className={`${styles.navlink} `}><u>SEE MORE</u></NavLink>
       </div>
   </div>
   )
@@ -53,10 +53,10 @@ const OurBlogs = () =>{
   ssr={true} // means to render carousel on server-side.
   infinite={true}
   autoPlay={true}
-  autoPlaySpeed={3000}
+  autoPlaySpeed={2000}
   keyBoardControl={true}
-  customTransition="all .5"
-  transitionDuration={500}
+  customTransition="all 300ms"
+  transitionDuration={300}
   containerClass="carousel-container"
   removeArrowOnDeviceType={["desktop","tablet", "mobile"]}
   dotListClass="custom-dot-list-style"

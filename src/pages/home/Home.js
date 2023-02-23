@@ -1,8 +1,8 @@
 import { useState } from "react";
-import ImageCarousel from "../../components/ImgeCarousel";
+// import ImageCarousel from "../../components/ImgeCarousel";
 import HomeCarosel from "../../components/HomeCarousel";
 import CompanyInfo from "./CompanyInfo";
-import Testimonials from "./Testimonials";
+// import Testimonials from "./Testimonials";
 import OurBlogs from "./OurBlogs";
 import OurTeams from "./OurTeams";
 import { FaBalanceScale, FaQuestionCircle } from "react-icons/fa";
@@ -11,6 +11,7 @@ import { TbMoodHappy } from "react-icons/tb";
 import { AiTwotoneLock } from "react-icons/ai";
 import { FaTimes } from "react-icons/fa";
 import aboutImg from "../../assets/about.jpg";
+import bgImage from '../../assets/home/home4.png'
 const Home = () => {
   const [openVedio, setOpenVedio] = useState(false);
   return (
@@ -20,8 +21,8 @@ const Home = () => {
 
       <section className="container p-3 p-lg-0">
         <div className="d-lg-flex my-lg-5 py-5 position-relative ">
-          <div className="py-lg-5">
-            <div className="fs-5 fw-bold about-as-title-at-home text-center">ABOUT US</div>
+          <div className="py-lg-4">
+            <h4 className="text-center">ABOUT US</h4>
             <div className="fw-bold fs-1 dark-blue-text">
               EF - Stands for Synergy, Innovation & Excellence.
             </div>
@@ -69,69 +70,75 @@ const Home = () => {
           )}
         </div>
       </section>
-      <section className="featured-carousel container pb-5 bg-white">
-        <ImageCarousel />
+      <section className="featured-carousel bg-white">
+      <div>
+      <img src={bgImage} alt="background_image" style={{width:'100%'}} />
+      </div>
+      {
+      // <h1 className="text-center pb-5">Our Latest Projects</h1>        
+          // <ImageCarousel />
+        }
       </section>
 
       <section className="why-choose-us py-lg-5">
-        <div className="text-center fw-bold fs-1 dark-blue-text py-5">
+        <h1 className="text-center fw-bold fs-1 py-5">
           {" "}
           Why Choose Us ?
-        </div>
+        </h1>
         <div className="container">
           <div className="d-md-flex pb-5 mx-2 mx-lg-0">
             <div className="flex-fill bg-white border rounded-3 shadow-lg p-3 me-md-3 mt-2 mt-lg-0">
               <div className="d-flex align-items-center">
-                <span className="text-success fs-1">
+                <span className="text-warning fs-1">
                   {" "}
                   <FaBalanceScale />
                 </span>
-                <span className="dark-blue-text fs-3 fw-bold ms-3">
+                <h4 className="ms-3">
                   Honesty
-                </span>
+                </h4>
               </div>
-              <div className="mt-3 dark-blue-text fs-5">
+              <div className="mt-2 dark-blue-text fs-5">
                 Conduct business with our customers and with each in Honestly
               </div>
             </div>
             <div className="flex-fill bg-white border rounded-3 shadow-lg p-3 me-md-3  mt-2 mt-lg-0">
               <div className="d-flex align-items-center">
-                <span className="text-success fs-1">
+                <span className="text-warning fs-1">
                   {" "}
                   <TbMoodHappy />
                 </span>
-                <span className="dark-blue-text fs-3 fw-bold ms-3">
+                <h4 className="ms-3">
                   Quality
-                </span>
+                </h4>
               </div>
-              <div className="mt-3 dark-blue-text fs-5">
+              <div className="mt-2 dark-blue-text fs-5">
                 Consistently deliver extremely high-quality tire sales and
                 installations.
               </div>
             </div>
             <div className="flex-fill bg-white border rounded-3 shadow-lg p-3 me-md-3  mt-2 mt-lg-0">
               <div className="d-flex align-items-center">
-                <span className="text-success fs-1">
+                <span className="text-warning fs-1">
                   {" "}
                   <AiTwotoneLock />
                 </span>
-                <span className="dark-blue-text fs-3 fw-bold ms-3">Safety</span>
+                <h4 className="ms-3">Safety</h4>
               </div>
-              <div className="mt-3 dark-blue-text fs-5">
+              <div className="mt-2 dark-blue-text fs-5">
                 Maintain a safety-first mindset and overall business operation.
               </div>
             </div>
             <div className="flex-fill bg-white border rounded-3 shadow-lg p-3  mt-2 mt-lg-0">
               <div className="d-flex align-items-center">
-                <span className="text-success fs-1">
+                <span className="text-warning fs-1">
                   {" "}
                   <FaQuestionCircle />
                 </span>
-                <span className="dark-blue-text fs-3 fw-bold ms-3">
+                <h4 className="ms-3">
                   Responsible
-                </span>
+                </h4>
               </div>
-              <div className="mt-3 dark-blue-text fs-5">
+              <div className="mt-2 dark-blue-text fs-5">
                 We are responsibile, committed, dependable, accountable, and
                 care about others
               </div>
@@ -143,7 +150,7 @@ const Home = () => {
       <CompanyInfo />
      <div className="bg-white px-3 px-lg-0">
      <div className="py-5">
-     <div className="text-center">OUR PROFESSIONALS</div>
+     <h6 className="text-center mt-lg-5">OUR PROFESSIONALS</h6>
      <h1 className="text-center">Meet Our Teams</h1>
      </div>
      <div className="container">
@@ -151,15 +158,17 @@ const Home = () => {
      </div>
      </div>
       <div className="bg-white">
-      <div className="testimonial-container px-3 px-lg-0 py-5">
-      <div className="container">
-      <div className="testimonial-title text-center pt-2 pt-lg-5 ">TESTIMONIAL</div>
-      <div className="fs-1 fw-bold text-center pb-5">People Say About Us</div>
-      <Testimonials />
-      </div>
-      </div>
-      <section className="ourblog-conaner-athome py-lg-5 my-lg-5">
-      <div className="text-center p-5 red-text">OUR BLOGS</div>
+      {
+      //   <div className="testimonial-container px-3 px-lg-0 py-5">
+      // <div className="container">
+      // <div className="testimonial-title text-center pt-2 pt-lg-5 ">TESTIMONIAL</div>
+      // <div className="fs-1 fw-bold text-center pb-5">People Say About Us</div>
+      // <Testimonials />
+      // </div>
+      // </div>
+    }
+      <section className="ourblog-conaner-athome py-5">
+      <h6 className="text-center pt-5">OUR BLOGS</h6>
       <h1 className="text-center">Our Latest News</h1>
       <div className="container blog-image px-3 px-lg-0 py-5">
       <OurBlogs />

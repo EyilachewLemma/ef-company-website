@@ -1,9 +1,12 @@
 
 .servicepage{
-    background-image: url('../../assets/bgimg/bg3.jpg');
+    background-image: url('../../assets/bgimg/bg4.png');
     background-size: cover;
     background-attachment: fixed;
     background-color: rgba(211, 211, 209, 0.725);
+}
+.cardText{
+    font-size: 1.2rem;
 }
 .seeMore{
     text-decoration: none;
@@ -12,7 +15,8 @@
 
 }
 .seeMore:hover{
-    color: #f0542d;
+    color: #2A9BC4;
+    border-bottom: 2px solid #2A9BC4;
 }
 /* service Detail */
 .navLink{

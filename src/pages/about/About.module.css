@@ -1,8 +1,11 @@
 .aboutWraper{
-    background-image: url('../../assets/bgimg/bg3.jpg');
+    background-image: url('../../assets/bgimg/bg1.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-color: rgba(211, 211, 209, 0.725);
+}
+.psize{
+    font-size: 1.2rem;
 }
 .identity{
     background-color: #f7f7f7;
@@ -12,10 +15,23 @@
     color: rgb(255, 200, 0);
 }
 .ourServiceBtn{
-    background-color: #f0542d;
+    background-color: #2A9BC4;
     color: #fff;
     border: none;
 }
 .ourServiceBtn:hover{
     background-color: #313131;
+}
+.imgContainer{
+    width: 100%;
+    overflow: hidden;
+    background-color: aqua;
+}
+.imgContainer img{
+    width: 100%;
+    transition: all 3s;
+   
+}
+.imgContainer img:hover{
+    transform: scale(1.3);
 }

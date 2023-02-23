@@ -18,7 +18,7 @@ const CompanyInfo = () =>{
         <p className="text-center big-text fw-bold">27+</p>
         <p className="text-center fs-5">Successful Project</p>
         </div>
-        <div className="flex-fill text-white"> 
+        <div className="flex-fill"> 
         <p className="text-center big-text fw-bold">210+</p>
         <p className="text-center fs-5">Happy Customers</p>
         </div>

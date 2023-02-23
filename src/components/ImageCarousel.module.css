@@ -1,4 +1,5 @@
 .imageContainer{
+    position: relative;
     width: 90%;
     height: 400px;
     overflow: hidden;    
@@ -13,7 +14,23 @@
 .imageContainer img:hover{
     transform: scale(1.5);
 }
+.projectDescription{
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.378);
+    color: #fff;
+    visibility: hidden;
+    transition: all 3s;
 
+}
+.imageContainer:hover .projectDescription{
+    height: 100%;
+    visibility: visible;
+
+}
 .singlCarousel{
      width: 100%;
     height: 100%;

@@ -10,8 +10,8 @@ const Services = () => {
      <BackgroundImage title={"Services"} isDetail={false} longTitle='' />
      <div className="text-center py-5">
        <div className="py-lg-5">
-       <span className="red-text">OUR CAPABILITIES</span>
-       <div className="fs-1 fw-bold">What We Do</div>
+       <h6>OUR CAPABILITIES</h6>
+       <h1>What We Do</h1>
        </div>
      </div>
 
@@ -20,13 +20,15 @@ const Services = () => {
          <div class="col-sm-4">
            <div class="card h-100">
              <div class="card-body">                
-               <span className="fs-1"><GiSpookyHouse /></span>
-               <h5 class="card-title mt-3">
+               <div className="d-flex">
+               <span className="fs-1 align-self-start"><GiSpookyHouse /></span>
+               <h5 class="card-title ms-3 mt-3">
                Building Architectural and Structural Design
              </h5>
+               </div>
            
                
-               <p class="card-text mt-3">
+               <p class={`${styles.cardText} mt-2`}>
                  The art and science of creating a structural system in nature
                  or in the artificial world. The term “architecture” relates
                  mainly to the design of the built environment, but it can also
@@ -40,10 +42,10 @@ const Services = () => {
          <div class="card h-100">
            <div class="card-body">
              <div></div>
-             <h4 class="card-title">
+             <h5 class="card-title">
                Building Architectural and Structural Design
-             </h4>
-             <p class="card-text">
+             </h5>
+             <p class={`${styles.cardText}`}>
                The art and science of creating a structural system in nature
                or in the artificial world. The term “architecture” relates
                mainly to the design of the built environment, but it can also
@@ -56,10 +58,10 @@ const Services = () => {
        <div class="card h-100">
          <div class="card-body">
            <div></div>
-           <h4 class="card-title">
+           <h5 class="card-title">
              Building Architectural and Structural Design
-           </h4>
-           <p class="card-text">
+           </h5>
+           <p class={`${styles.cardText}`}>
              The art and science of creating a structural system in nature
              or in the artificial world. The term “architecture” relates
              mainly to the design of the built environment, but it can also

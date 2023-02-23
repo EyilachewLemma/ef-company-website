@@ -1,0 +1,19 @@
+.wraperContainer{
+    background-image: url('../../assets/bgimg/bg1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.cardContainer{
+ color: black ;
+}
+.cardContainer:hover{
+  background-color: #2A9BC4;
+  color: white;
+}
+.cardContainer:hover h4{
+    color: #fff;
+}
+.cardContainer:hover h5{
+    color: #fff;
+}

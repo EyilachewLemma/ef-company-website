@@ -1,5 +1,5 @@
 .footerContainer{
-    background-color: #111111;
+    background-color: #2A9BC4;
     font-family: 'Roboto';
     font-family: 'Source Sans Pro';
     font-size: 1.2rem;
@@ -11,7 +11,7 @@
 }
 .navlink:hover{
     text-decoration: underline;
-    color: #f0542d;
+    color: #4429ef;
 }
 .desiner{
     background-color: #111111;
