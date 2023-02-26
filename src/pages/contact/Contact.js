@@ -57,7 +57,7 @@ const Contact = () => {
       </div>
       <div className="mt-md-5">
        <h1 className="text-center">Have any Question?</h1>
-       <p className="text-center">Lets Descus it.</p>
+       <p className="text-center">Lets Discus it.</p>
       </div>
       <ContactForm />
       <div className="mt-5">

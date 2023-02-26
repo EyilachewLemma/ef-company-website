@@ -203,7 +203,7 @@ h6{
   @media(min-width:768px){
     .contact-form{
       width: 75%;
-      margin: 10rem auto;
+      margin: 6rem auto;
       border: 0.1rem solid rgb(179, 179, 183);
       border-radius: 2rem;
       box-shadow: #122e74;

@@ -1,6 +1,8 @@
 import BackgroundImage from "../../components/BackgroundImage";
 import { NavLink } from "react-router-dom";
-import SingleImageCarousel from "../../components/SingleImageCarousel";
+// import SingleImageCarousel from "../../components/SingleImageCarousel";
+import serviceImage from '../../assets/img3.jpg'
+import ContactForm from "../contact/ContactForm";
 import styles from "./Service.module.css";
 
 const ServiceDetail = () => {
@@ -16,7 +18,7 @@ const ServiceDetail = () => {
         <div className="container">
         <div className="row">
             <div className="col-lg-8">
-              <SingleImageCarousel />
+              <img src={serviceImage} alt="service_image" />
             </div>
             <div className="col-lg-4 ps-lg-5 d-none d-lg-block">
               <div className="fs-4 fw-bold mb-3 border-3 border-bottom">
@@ -72,6 +74,10 @@ const ServiceDetail = () => {
               </NavLink>
             </div>
           ))}
+        </div>
+        <div className="p-5 text-center">Have you a project in your mind,lets discus it</div>
+        <div>
+        <ContactForm />
         </div>
         </div>
       </div>
