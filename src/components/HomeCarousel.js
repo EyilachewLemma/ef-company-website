@@ -3,8 +3,6 @@ import "react-multi-carousel/lib/styles.css";
 import styles from './HomeCarosel.module.css'
 import home1 from '../assets/home/home1.jpg'
 import home2 from '../assets/home/home2.jpg'
-import home3 from '../assets/home/home3.jpg'
-import home4 from '../assets/home/home4.png'
 import home5 from '../assets/home/home5.jpg'
 import home6 from '../assets/home/home6.jpg'
 
@@ -54,7 +52,7 @@ const HomeCarosel = () =>{
   ssr={true} // means to render carousel on server-side.
   infinite={true}
   autoPlay={true}
-  autoPlaySpeed={2000}
+  autoPlaySpeed={3000}
   keyBoardControl={true}
   customTransition="all 300ms"
   transitionDuration={500}
@@ -65,8 +63,6 @@ const HomeCarosel = () =>{
 >
   {imageItem(home1)}
   {imageItem(home2)}
-  {imageItem(home3)}
-  {imageItem(home4)}
   {imageItem(home5)}
   {imageItem(home6)}
   

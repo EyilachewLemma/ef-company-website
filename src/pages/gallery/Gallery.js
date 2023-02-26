@@ -34,10 +34,13 @@ const Project = () => {
             <div className="d-lg-flex justify-content-between align-items-center">
               <button onClick={allProject} className={isAll? `${styles.selectionBtn} border-2 border-bottom border-danger`:styles.selectionBtn}>Projects</button>
               <button onClick={filterProject} className={`${styles.selectionBtn} ms-3`}>
-                Staffs and Managements
+                Designed Projects
               </button>
               <button onClick={filterProject} className={`${styles.selectionBtn} ms-3`}>
                 Ceremonies
+              </button>
+              <button onClick={filterProject} className={`${styles.selectionBtn} ms-3`}>
+                Certificates
               </button>
                 </div>
           </div>

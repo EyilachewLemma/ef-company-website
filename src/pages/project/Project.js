@@ -6,7 +6,6 @@ import project3 from '../../assets/projects/project3.png'
 import project4 from '../../assets/projects/project4.png'
 import project5 from '../../assets/projects/project-4.png'
 import project6 from '../../assets/projects/project3.png'
-
 import styles from "./Project.module.css";
 import { NavLink } from "react-router-dom";
 import CompanyInfo from "../home/CompanyInfo";
@@ -54,7 +53,7 @@ const Project = () => {
                   <img src={project1} className="card-img-top" alt="..." />
                 </div>
                 <div className="card-body">
-                  <NavLink className={`${styles.navlink}`}>
+                  <NavLink to={`/project/${1}`} className={`${styles.navlink}`}>
                     <h5 className={`card-title ${styles.cardTitle}`}>
                       Projects under Oromia Industrial Parks Development
                       Corporation
@@ -69,7 +68,7 @@ const Project = () => {
                    <div className="progress-bar bg-success" role="progressbar" style={{width:"100%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%  Completed</div>
                  </div>
                   <div className="mt-3 mt-lg-5">
-                  <NavLink className={`${styles.navlink}`}>
+                  <NavLink to={`/project/${1}`} className={`${styles.navlink}`}>
                     See More
                   </NavLink>
                   </div>
@@ -82,7 +81,7 @@ const Project = () => {
                   <img src={project2} className="card-img-top" alt="..." />
                 </div>
                 <div className="card-body">
-                  <NavLink className={`${styles.navlink}`}>
+                  <NavLink to={`/project/${1}`} className={`${styles.navlink}`}>
                     <h5 className={`card-title ${styles.cardTitle}`}>
                       Projects under FDRE, Minister of Science Higher Education
                     </h5>
@@ -100,7 +99,7 @@ const Project = () => {
                    <div className="progress-bar bg-success" role="progressbar" style={{width:"50%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">50%  Completed</div>
                  </div>
                   <div className="mt-3 mt-lg-5">
-                  <NavLink className={`${styles.navlink}`}>
+                  <NavLink to={`/project/${1}`} className={`${styles.navlink}`}>
                     See More
                   </NavLink>
                   </div>

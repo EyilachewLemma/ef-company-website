@@ -22,9 +22,12 @@ const About = () => {
                 width="100%"
                 height="100%"
                 title="video_element"
-                src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&mute=0"
+                src="https://www.youtube.com/watch?v=pQezX9293jo&autoplay=0"
               ></iframe>
             </div>
+            {
+              
+            }
             <div className="col-lg-6 mt-2 mt-lg-0 pb-lg-3">
               <h6>Welcome to EF</h6>
               <h3>
@@ -70,8 +73,7 @@ const About = () => {
               <div className="ms-3">
                 <h2 className="mt-2">Top Rated</h2>
                 <div>
-                  Lorem ipsum dolor sit amet, consec tetur adipisicing elit.
-                  Officia odio eum corporis consequatur.
+                It has made us top rated for doing work that meets the needs of our clients.
                 </div>
               </div>
             </div>
@@ -82,8 +84,7 @@ const About = () => {
               <div className="ms-3">
                 <h2 className="mt-2">Best Quality</h2>
                 <div>
-                  Lorem ipsum dolor sit amet, consec tetur adipisicing elit.
-                  Officia odio eum corporis consequatur.
+                  We provide our services with a high quality that satisfies our clients.
                 </div>
               </div>
             </div>
@@ -94,8 +95,7 @@ const About = () => {
               <div className="ms-3">
                 <h2 className="mt-2">Low Cost</h2>
                 <div>
-                  Lorem ipsum dolor sit amet, consec tetur adipisicing elit.
-                  Officia odio eum corporis consequatur.
+                Affordable and negotiable price for mutual benefit.
                 </div>
               </div>
             </div>

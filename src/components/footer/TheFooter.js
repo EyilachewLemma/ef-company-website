@@ -21,7 +21,7 @@ const TheFooter = () => {
       <div className="row text-white">
       <div className="col-lg-4">
         <div className="d-flex">
-          <img src={logo} alt="logo" style={{width:50,height:50}} />
+          <img src={logo} alt="logo" style={{width:80,height:60}} />
         </div>
         <div className="text-white py-3">
           EF Architects and Engineers consulting

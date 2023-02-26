@@ -28,7 +28,7 @@ const TheHeader =()=>{
         <Navbar collapseOnSelect expand="lg" sticky='top' className='blue-background py-2'>
       <Container>
       <NavLink to="/" className="text-decoration-none pb-1">
-      <img src={logo} alt='logo' style={{width:60,height:60}} />
+      <img src={logo} alt='logo' style={{width:80,height:60}} />
       </NavLink>
         <Navbar.Toggle aria-controls="responsive-navbar-nav text-white" />
         <Navbar.Collapse id="responsive-navbar-nav text-white">
@@ -78,8 +78,11 @@ const TheHeader =()=>{
             isActive ? "active-menu-item" :"menu-item"}>Profile</NavLink>
             <NavLink to="news"  className={({ isActive }) =>
             isActive ? "active-menu-item" :"menu-item"}>News</NavLink>
+            <NavLink to="vacancy"  className={({ isActive }) =>
+            isActive ? "active-menu-item" :"menu-item"}>Vacancy</NavLink>
             <NavLink to="contact"  className={({ isActive }) =>
             isActive ? "active-menu-item" :"menu-item"}>Contact</NavLink>
+            
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -13,6 +13,10 @@ import ServiceDetail from "../pages/service/ServiceDetail";
 import Partners from "../pages/client/Partners";
 import ErrorPage from "../pages/ErrorPage";
 import NewsDetail from "../pages/news/NewsDetail";
+import ProjectDetail from "../pages/project/ProjectDetail";
+import ActiveVacancy from "../pages/vacancy/ActiveVacancy";
+import VacancyApplication from "../pages/vacancy/VacancyApplication";
+import VacancyDetail from "../pages/vacancy/VacancyDetail";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,6 +35,10 @@ const router = createBrowserRouter([
       { path: "news", element: <News /> },
       { path: "news/:id", element: <NewsDetail /> },
       { path: "profile", element: <Profile /> },
+      { path: "project/:id", element: <ProjectDetail /> },
+      {path: "vacancy",element:<ActiveVacancy />},
+      { path: "vacancy/:id", element: <VacancyDetail /> },
+      { path: "application", element: <VacancyApplication /> },
     ],
   },
 ]);
