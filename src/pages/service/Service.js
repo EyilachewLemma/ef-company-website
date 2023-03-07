@@ -1,9 +1,37 @@
+import { useEffect, useState } from "react";
 import BackgroundImage from "../../components/BackgroundImage";
-import {GiSpookyHouse} from 'react-icons/gi'
+// import {GiSpookyHouse} from 'react-icons/gi'
 import { NavLink } from "react-router-dom";
 import CompanyInfo from "../home/CompanyInfo";
+import {spinnerAction} from '../../stores/spinner'
+import { useDispatch } from "react-redux";
+import apiCall from "../../url";
 import styles from './Service.module.css'
 const Services = () => {
+  const [services,setServices] = useState([])
+  const dispatch = useDispatch()
+
+  const fetchServices = async() =>{
+    dispatch(spinnerAction.setIsLoading(true))
+    try{
+     const response = await apiCall.get('services')
+     if(response.status === 200){
+      setServices(response.data)
+     }
+    }
+    catch(err){
+
+    }
+    finally {
+     dispatch(spinnerAction.setIsLoading(false))
+    }
+ }
+  
+  useEffect(()=>{    
+   fetchServices()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
+  console.log('services = ',services)
   return (
     <div className={styles.servicepage}>
      <div className="bg-white pb-lg-5">
@@ -16,60 +44,34 @@ const Services = () => {
      </div>
 
      <div className="container px-3 px-lg-0">
-       <div class="row pb-5 mb-lg-5">
-         <div class="col-sm-4">
-           <div class="card h-100">
-             <div class="card-body">                
+       <div className="row pb-5 mb-lg-5">
+
+       {
+        services?.length >0 &&(
+          services.map(service=>(
+         <div className="col-md-6 col-lg-4 mt-4" key={service.id}>
+           <div className="card h-100">
+             <div className="card-body">                
                <div className="d-flex">
-               <span className="fs-1 align-self-start"><GiSpookyHouse /></span>
-               <h5 class="card-title ms-3 mt-3">
-               Building Architectural and Structural Design
+              {
+                // <span className="fs-1 align-self-start"><GiSpookyHouse /></span>
+              }
+               <h5 className="card-title ms-3 mt-3">
+               {service.title}
              </h5>
                </div>
            
                
-               <p class={`${styles.cardText} mt-2`}>
-                 The art and science of creating a structural system in nature
-                 or in the artificial world. The term “architecture” relates
-                 mainly to the design of the built environment, but it can also
-                 relate to industrial design
-               </p>
-               <NavLink to='/service-detail' className={`${styles.seeMore} py-2 px-2`}>See More</NavLink>
+               <div className={`${styles.cardText} mt-2`}>
+                 {service?.short_desc}
+               </div>
+               <div className="mt-4">
+               <NavLink to={`/service/${service.id}`} className={`${styles.seeMore} py-2 px-2`}>See More</NavLink>
+               </div>
              </div>
            </div>
          </div>
-         <div class="col-sm-4">
-         <div class="card h-100">
-           <div class="card-body">
-             <div></div>
-             <h5 class="card-title">
-               Building Architectural and Structural Design
-             </h5>
-             <p class={`${styles.cardText}`}>
-               The art and science of creating a structural system in nature
-               or in the artificial world. The term “architecture” relates
-               mainly to the design of the built environment, but it can also
-               relate to industrial design
-             </p>
-           </div>
-         </div>
-       </div>
-       <div class="col-sm-4">
-       <div class="card h-100">
-         <div class="card-body">
-           <div></div>
-           <h5 class="card-title">
-             Building Architectural and Structural Design
-           </h5>
-           <p class={`${styles.cardText}`}>
-             The art and science of creating a structural system in nature
-             or in the artificial world. The term “architecture” relates
-             mainly to the design of the built environment, but it can also
-             relate to industrial design
-           </p>
-         </div>
-       </div>
-     </div>
+         )))}
        </div>
      </div>
      </div>     

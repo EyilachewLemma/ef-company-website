@@ -3,12 +3,12 @@
 
 /* company info */
 .companyInfo{
-    background-color: rgba(0, 0, 0, 0.304);
+    background-color: rgba(0, 0, 0, 0.573);
 }
 
 /* testimonial */
 .testimonialImgContainer{
-    background-image: url('../../assets/testimonial/bg.png');
+    background-image: url('../../assets/bgimg/bg1.jpg');
     width: 96%;
     border: 1px solid rgb(211, 201, 201);
     

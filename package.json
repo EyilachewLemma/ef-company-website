@@ -1,5 +1,4 @@
 {
-  "homepage": "https://EyilachewLemma.github.io/ef-company-website",
   "name": "ef-website",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +11,7 @@
     "bootstrap": "^5.2.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
+    "react-countup": "^6.4.1",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-multi-carousel": "^2.8.2",
@@ -22,8 +22,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

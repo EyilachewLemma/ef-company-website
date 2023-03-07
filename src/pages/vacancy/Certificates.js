@@ -1,8 +1,13 @@
 
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
+import Toast from 'react-bootstrap/Toast';
+import validateCertificateInfo from "./validateCertificateInfo";
 const Certificates = ({data,setData}) => {
   const [certificate,setCertificate] = useState({})
+  const [errors,setErrors] = useState({})
+  const [show,setShow] = useState(false)
+
   const changeHandler = (e) =>{
     const {name,value} = e.target
     setCertificate(previousData=>{
@@ -11,13 +16,20 @@ const Certificates = ({data,setData}) => {
   }
   const addCertificates = (e)=>{
     e.preventDefault()
-    setData([...data,certificate])
-    setCertificate({})
+    const errorValue = validateCertificateInfo(certificate)
+    if(Object.values(errorValue)?.length > 0){
+      setErrors(errorValue)
+    }
+    else {
+      setData([...data,certificate])
+      setCertificate({})
+      setShow(true)
+    }
   }
     return (
     <>
       <div className="text-center pb-5">
-        Add your Certificate here,Click Save Button to save each Certificate.
+        Add your Certificate here,Click Add Button to save each Certificate.
         You can add more than one Certificate, finally click Next button to go
         to the next form
       </div>
@@ -33,16 +45,20 @@ const Certificates = ({data,setData}) => {
              name='title'
              value={certificate.title || ''}
              onChange={changeHandler}
-              />
+             className={errors.title ?"red-border":""}
+             />
+             {errors.title ?<span className="red-text">{errors.title }</span>:""}
           </Form.Group>
           <Form.Group className="mb-3 me-3 flex-fill" controlId="eshuer">
-            <Form.Label>Essued by</Form.Label>
+            <Form.Label>Issued by</Form.Label>
             <Form.Control
              type="text"
-             name='essuedBy'
-             value={certificate.essuedBy || ''}
+             name='issuer'
+             value={certificate.issuer || ''}
              onChange={changeHandler}
-              />
+             className={errors.issuer ?"red-border":""}
+             />
+             {errors.issuer ?<span className="red-text">{errors.issuer }</span>:""}
           </Form.Group>
         </div>
         <div className="d-md-flex">
@@ -50,13 +66,15 @@ const Certificates = ({data,setData}) => {
             className="mb-3 flex-fill me-md-4"
             controlId="eshued-date"
           >
-            <Form.Label>Eshud Date </Form.Label>
+            <Form.Label>Issued Date </Form.Label>
             <Form.Control 
             type="date"
-            name='essuedDate'
-             value={certificate.essuedDate || ''}
+            name='date'
+             value={certificate.date || ''}
              onChange={changeHandler}
+             className={errors.date ?"red-border":""}
              />
+             {errors.date ?<span className="red-text">{errors.date }</span>:""}
           </Form.Group>
           <Form.Group className="mb-3 me-3 flex-fill " controlId="summary">
             <Form.Label>Summary</Form.Label>
@@ -68,12 +86,29 @@ const Certificates = ({data,setData}) => {
               />
           </Form.Group>
         </div>
-        <div className="d-flex justify-content-end">
+        <div className="d-flex justify-content-between">
+        <Toast
+        onClose={() => setShow(false)}
+         show={show}
+          delay={5000}
+           autohide
+           bg="success"
+           >
+           <Toast.Header>
+           <img
+             src="holder.js/20x20?text=%20"
+             className="rounded me-2"
+             alt=""
+           />
+           <strong className="me-auto fs-5 fw-bold">Successful</strong>
+         </Toast.Header>
+       <Toast.Body className="text-white p-2 fs-5">successfully Added, You can add more Certificates.</Toast.Body>
+     </Toast>
      <button
      onClick={addCertificates}
-     className="next-btn px-4 py-2 me-2"
+     className="next-btn px-4 py-2 ms-auto me-2 align-self-center"
      >
-       Save
+       Add
      </button>
      </div>
       </Form>

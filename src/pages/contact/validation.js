@@ -14,7 +14,7 @@
         errors.email = 'invalid email address'
      }
      if(!inputs.message){
-        errors.message = 'please write your message'
+        errors.message = 'please write your message here'
      }
      
      if(!inputs.service){

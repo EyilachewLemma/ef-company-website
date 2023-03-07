@@ -14,9 +14,9 @@ const TheHeader =()=>{
       <div className='contact-at-header d-none d-lg-block'>
       <div className='container d-flex justify-content-between p-0'>
       <div className='fs-5 p-2'>
-     <a href='https://www.facebook.com/' className='text-white'> <ImFacebook className='me-3' /></a>
+     <a href='https://www.facebook.com/profile.php?id=100063901428377' className='text-white'> <ImFacebook className='me-3' /></a>
       <a href='https://twitter.com/' className='text-white'><ImTwitter className='me-3' /></a>
-      <a href='https://www.linkedin.com/' className='text-white'><AiFillLinkedin className='me-3' /></a>
+      <a href='https://www.linkedin.com/in/endale-abdissa-a13564234' className='text-white'><AiFillLinkedin className='me-3' /></a>
       </div>
       <div className='ms-auto d-flex align-items-center text-white'>
        <span className='fs-5 me-2'><HiOutlineMail /></span>
@@ -25,7 +25,7 @@ const TheHeader =()=>{
       </div>
       </div>
      
-        <Navbar collapseOnSelect expand="lg" sticky='top' className='blue-background py-2'>
+        <Navbar collapseOnSelect expand="lg" sticky='top' className='red-background py-2'>
       <Container>
       <NavLink to="/" className="text-decoration-none pb-1">
       <img src={logo} alt='logo' style={{width:80,height:60}} />
@@ -56,23 +56,29 @@ const TheHeader =()=>{
             </div>
              </div>
              </div>
-             <div className='dropdown-menue'>
-             Gallery <RiArrowDropDownLine size={30} />
-             <div className='dropdown-item-container py-3 border shadow-sm'>
-             <div>
+              <div>
              <NavLink to="gallery"  className={({ isActive }) =>
-            isActive ? "active-menu-item" :"sub-menu"}>Projects</NavLink>
-            </div>
-            <div>
-            <NavLink to="gallery"  className={({ isActive }) =>
-            isActive ? "active-menu-item" :"sub-menu"}>Staffs </NavLink>
-            </div>
-            <div>
-            <NavLink to="gallery"  className={({ isActive }) =>
-            isActive ? "active-menu-item" :"sub-menu"}>Ceremony </NavLink>
-            </div>
-             </div>
-             </div>
+             isActive ? "active-menu-item" :"menu-item"}>Gallery </NavLink> 
+             </div>   
+            {
+            //   <div className='dropdown-menue'>
+            //   Gallery <RiArrowDropDownLine size={30} />
+            //   <div className='dropdown-item-container py-3 border shadow-sm'>
+            //   <div>
+            //   <NavLink to="gallery"  className={({ isActive }) =>
+            //  isActive ? "active-menu-item" :"sub-menu"}>Projects</NavLink>
+            //  </div>
+            //  <div>
+            //  <NavLink to="gallery"  className={({ isActive }) =>
+            //  isActive ? "active-menu-item" :"sub-menu"}>Staffs </NavLink>
+            //  </div>
+            //  <div>
+            //  <NavLink to="gallery"  className={({ isActive }) =>
+            //  isActive ? "active-menu-item" :"sub-menu"}>Ceremony </NavLink>
+            //  </div>
+            //   </div>
+            //   </div>
+            }
             
             <NavLink to="profile" className={({ isActive }) =>
             isActive ? "active-menu-item" :"menu-item"}>Profile</NavLink>

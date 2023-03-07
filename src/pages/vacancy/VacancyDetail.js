@@ -1,9 +1,13 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 const VacancyDetail = () => {
   const navigate = useNavigate();
+  const {id} = useParams()
   return (
+    <div className="vacancy-detail">
+    <div className="vacancy-wrapeer">
     <div className="p-3 p-lg-5 container">
-      <div className="border rounded-3 px-2 px-lg-4 pt-3 pb-5">
+      <div className="border rounded-3 px-3 px-lg-4 pt-3 pb-5 bg-white">
+      <div className="fs-5 p-2 fw-bold">Read the job description here carefully before applying</div>
         <div className="d-flex">
           <span className="fw-bold">Jop Title : </span>
           <span className="ms-2">full time senior graphics designer</span>
@@ -54,12 +58,14 @@ const VacancyDetail = () => {
           for this job.
         </div>
         <button
-          onClick={() => navigate('/application')}
+          onClick={() => navigate(`/application/${id}`)}
           className="next-btn px-4 py-1 mt-3"
         >
           Apply Here
         </button>
       </div>
+    </div>
+    </div>
     </div>
   );
 };

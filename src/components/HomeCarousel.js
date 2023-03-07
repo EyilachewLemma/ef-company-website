@@ -30,8 +30,9 @@ const imageItem = (img)=>{
     <img src={img} alt="carousel_image" />
     <div className={styles.animationWroaper}></div>
     <div className={styles.animatedTitle}>
-    <div className={styles.animatedLongTitle}>EF Architect and Engineering Consulting</div>    
-   
+    <div className={styles.animatedLongTitle}>
+    EF Architect and Engineering Consulting
+    </div>       
     </div>
     <div className={`${styles.animatedDescription}`}>
     We deliver unique expertise for engineering solutions to satisfy our clients’ challenges.

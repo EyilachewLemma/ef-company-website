@@ -59,9 +59,9 @@ const TheFooter = () => {
        <span className="ms-2">efheadoffice1@gmail.com</span>
        </div>
        <div className="d-flex">
-       <a href="https://www.facebook.com/" className="text-white fs-3"><BsFacebook /></a>
-       <a href="https://www.facebook.com/" className="text-white fs-3 ms-3"><AiFillTwitterCircle /></a>
-       <a href="https://www.facebook.com/" className="text-white fs-3 ms-3"><AiFillLinkedin /></a>
+       <a href="https://www.facebook.com/profile.php?id=100063901428377" className="text-white fs-3"><BsFacebook /></a>
+       <a href="https://twitter.com/" className="text-white fs-3 ms-3"><AiFillTwitterCircle /></a>
+       <a href="https://www.linkedin.com/in/endale-abdissa-a13564234" className="text-white fs-3 ms-3"><AiFillLinkedin /></a>
        </div>
       </div>
       </div>

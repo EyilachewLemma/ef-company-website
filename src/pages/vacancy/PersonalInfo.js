@@ -1,12 +1,14 @@
 import Form from "react-bootstrap/Form";
-const PersonalInfo = ({data,setData}) => {
+const PersonalInfo = ({data,setData,errors,setErrors}) => {
 
   const changeHandler = (e) =>{
        const {name,value} = e.target
     setData(previousValue=>{
         return {...previousValue,[name]:value}
        })
-
+       if(value){
+        setErrors({...errors,[name]:""})
+       }
   }
 
   return (
@@ -16,19 +18,23 @@ const PersonalInfo = ({data,setData}) => {
         <Form.Label>First Name</Form.Label>
         <Form.Control
          type="text"
-         name="firstName"
-         value={data.firstName ||''}
+         name="f_name"
+         value={data.f_name ||''}
          onChange={changeHandler}
+         className={errors.f_name ?"red-border":""}
           />
+          {errors.f_name?<span className="red-text">{errors.f_name}</span>:""}
       </Form.Group>
       <Form.Group className="mb-3 flex-fill" controlId="mname">
         <Form.Label>Father Name</Form.Label>
         <Form.Control
          type="text"
-         name="middleName"
-         value={data.middleName ||''}
+         name="m_name"
+         value={data.m_name ||''}
          onChange={changeHandler}
-          />
+         className={errors.m_name ?"red-border":""}
+         />
+         {errors.m_name?<span className="red-text">{errors.m_name}</span>:""}
       </Form.Group>
       </div>
       <div className="row">
@@ -36,19 +42,23 @@ const PersonalInfo = ({data,setData}) => {
         <Form.Label>Grand Father Name</Form.Label>
         <Form.Control
          type="text"
-         name="lastName"
-         value={data.lastName || ''}
+         name="l_name"
+         value={data.l_name || ''}
          onChange={changeHandler}
-          />
+         className={errors.l_name ?"red-border":""}
+         />
+         {errors.l_name?<span className="red-text">{errors.l_name}</span>:""}
       </Form.Group>
       <Form.Group className="mb-3 col-md-6 " controlId="dob">
         <Form.Label>Birth Date</Form.Label>
         <Form.Control
          type="date" 
-         name="birthDate"
-         value={data.birthDate ||''}
+         name="birth_date"
+         value={data.birth_date ||''}
          onChange={changeHandler}
-         />
+         className={errors.birth_date ?"red-border":""}
+          />
+          {errors.birth_date?<span className="red-text">{errors.birth_date}</span>:""}
       </Form.Group>
       </div>
      <div className="d-md-flex">
@@ -59,16 +69,20 @@ const PersonalInfo = ({data,setData}) => {
       name="email"
       value={data.email || ''}
       onChange={changeHandler}
-       />
+      className={errors.email ?"red-border":""}
+      />
+      {errors.email?<span className="red-text">{errors.email}</span>:""}
    </Form.Group>
    <Form.Group className="mb-3 flex-fill" controlId="phoneno">
      <Form.Label>Phone Number</Form.Label>
      <Form.Control
       type="number"
-      name="phoneNumber"
-      value={data.phoneNumb ||''}
+      name="phone_no"
+      value={data.phone_no ||''}
       onChange={changeHandler}
-       />
+      className={errors.phone_no ?"red-border":""}
+      />
+      {errors.phone_no?<span className="red-text">{errors.phone_no}</span>:""}
    </Form.Group>
      </div>
      <div className="d-md-flex">
@@ -85,8 +99,8 @@ const PersonalInfo = ({data,setData}) => {
      <Form.Label>Subcity</Form.Label>
      <Form.Control
       type="text"
-      name="subcity"
-      value={data.subcity || ''}
+      name="sub_city"
+      value={data.sub_city || ''}
       onChange={changeHandler}
        />
    </Form.Group>

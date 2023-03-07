@@ -2,11 +2,6 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import styles from './ImageCarousel.module.css'
-import img1 from '../assets/img1.jpg'
-import img2 from '../assets/img2.jpg'
-import img3 from '../assets/img3.jpg'
-import img6 from '../assets/img6.jpg'
-import img7 from '../assets/img7.jpg'
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -24,14 +19,7 @@ const responsive = {
     slidesToSlide: 1 // optional, default to 1.
   }
 };
-const imageItem = (img)=>{
-  return (
-    <div className={styles.singlCarousel}>
-    <img src={img} alt="carousel_image" className="img-fluid" />
-  </div>
-  )
-}
-const SingleImageCarousel = () =>{
+const SingleImageCarousel = ({photos}) =>{
     return (
         <Carousel
   swipeable={true}
@@ -41,19 +29,21 @@ const SingleImageCarousel = () =>{
   ssr={true} // means to render carousel on server-side.
   infinite={true}
   autoPlay={true}
-  autoPlaySpeed={4000}
+  autoPlaySpeed={2000}
   keyBoardControl={true}
-  customTransition="all .5"
-  transitionDuration={500}
+  customTransition="all 300ms"
+  transitionDuration={300}
   containerClass="carousel-container"
   dotListClass="custom-dot-list-style"
   itemClass="carousel-item-padding-40-px"
 >
-  {imageItem(img1)}
-  {imageItem(img2)}
-  {imageItem(img3)}
-  {imageItem(img7)}
-  {imageItem(img6)}
+{
+  photos?.map((image) =>(
+    <div key={image.id} className={styles.singlCarousel}>
+    <img src={image.path} alt="carousel_image" className="img-fluid" />
+  </div>
+  ))
+}
 </Carousel>
     )
 }

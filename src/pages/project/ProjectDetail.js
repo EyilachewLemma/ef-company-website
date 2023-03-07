@@ -1,10 +1,36 @@
+import {useEffect,useState} from 'react'
 import BackgroundImage from "../../components/BackgroundImage";
 import { NavLink } from "react-router-dom";
 import SingleImageCarousel from "../../components/SingleImageCarousel";
+import { spinnerAction } from "../../stores/spinner";
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import apiCall from '../../url';
 import styles from "./Project.module.css";
 
 const ProjectDetail = () => {
-  let array = [1, 2, 3, 4, 5, 6, 7, 8];
+  const [projectDetail,setProjectDetail] = useState({})
+  const services = useSelector(state =>state.service.services)
+  const dispach = useDispatch()
+  const {id} = useParams()
+  const fetchProjects = async () => {
+    dispach(spinnerAction.setIsLoading(true));
+    try {
+      const response = await apiCall.get("projects");
+      if (response.status === 200) {
+        const detail = response.data.find(project=>project.id*1===id*1)
+        setProjectDetail(detail)
+      }
+    } catch (err) {
+    } finally {
+      dispach(spinnerAction.setIsLoading(false));
+    }
+  };
+  useEffect(() => {
+    fetchProjects();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  console.log("services=",services)
   return (
     <>
       <BackgroundImage
@@ -16,62 +42,55 @@ const ProjectDetail = () => {
         <div className="container">
         <div className="row">
             <div className="col-lg-8">
-              <SingleImageCarousel />
+              {
+                projectDetail?.photos?.length > 0 &&(
+                  <SingleImageCarousel photos={projectDetail?.photos} />
+                )
+              }
             </div>
             <div className="col-lg-4 ps-lg-5 d-none d-lg-block">
               <div className="fs-4 fw-bold mb-3 border-3 border-bottom">
                 Services
               </div>
 
-              {array.map((el) => (
-                <div className="d-flex justify-content-between align-items-center mt-1">
-                  <NavLink className={styles.navLink}>Perfect planning</NavLink>
-                  <NavLink
-                    className={`${styles.navLink} border rounded-circle px-2  bg-light`}
-                  >
-                    {el}
-                  </NavLink>
-                </div>
-              ))}
+              {
+                services?.length > 0 &&(
+                  services.map((service,index) => (
+                    <div key={service.id} className="d-flex justify-content-between align-items-center mt-1">
+                      <NavLink to={`/service/${service.id}`} className={styles.navLink}>{service.title}</NavLink>
+                      <NavLink to={`/service/${service.id}`}
+                        className={`${styles.navLink} border rounded-circle px-2  bg-light`}
+                      >
+                        {index+1}
+                      </NavLink>
+                    </div>
+                  ))
+                )
+              }
             </div>
           </div>
-          <h4 className="mt-5">Perfect Planning</h4>
-          <p className="col-lg-8">
-            The recent disruption of the architecture industry due to
-            coronavirus unleashed a spate of delays, project cancellations, and
-            overwhelming uncertainty about the future of the industry. With 37%
-            of firms experiencing cancellations, 80% dealing with unforeseen
-            delays, and over half struggling with reduced cash flow, providing a
-            high-quality end product to win — and keep — more customers is more
-            crucial than ever. Adaptation is critical to survival and, in this
-            case, architects must take greater care developing stunning drawings
-            and presentations to win projects and perfect architectural plans
-            that result in projects that run smoothly from start to finish. The
-            Process for Perfect Architectural Plans and Stunning Presentations
-            There are several stages to the architectural job process that begin
-            with presentations to your clients and move through schematic
-            design, design development, and construction drawings. Powerful
-            Presentations: The Key to Winning More Work Your architectural
-            drawings and/or presentation boards are the key to helping your
-            clients imagine your design clearly. Like any good sales pitch, they
-            serve to articulate your design and generate excitement and
-            interest.
-          </p>
+          <h4 className="mt-5">{projectDetail.title}</h4>
+          <div className="fs-5" dangerouslySetInnerHTML={{__html:projectDetail.description}}>
+          </div>
           <div className="col-lg-4 ps-lg-5 d-lg-none mt-5">
           <div className="fs-4 fw-bold mb-3 border-3 border-bottom">
             Services
           </div>
 
-          {array.map((el) => (
-            <div className="d-flex justify-content-between align-items-center mt-1">
-              <NavLink className={styles.navLink}>Perfect planning</NavLink>
-              <NavLink
-                className={`${styles.navLink} border rounded-circle px-2  bg-light`}
-              >
-                {el}
-              </NavLink>
-            </div>
-          ))}
+          {
+            services?.length > 0 && (
+              services.map((service,index) => (
+                <div key={service.id} className="d-flex justify-content-between align-items-center mt-1">
+                  <NavLink to={`/service/${service.id}`} className={styles.navLink}>{projectDetail.title}</NavLink>
+                  <NavLink to={`/service/${service.id}`}
+                    className={`${styles.navLink} border rounded-circle px-2  bg-light`}
+                  >
+                    {index+1}
+                  </NavLink>
+                </div>
+              ))
+            )
+          }
         </div>
         </div>
       </div>

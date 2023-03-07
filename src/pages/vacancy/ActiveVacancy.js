@@ -2,11 +2,12 @@ import { useNavigate } from "react-router-dom";
 const ActiveVacancy = () => {
   const navigate = useNavigate();
   return (
-    <div className="px-3 px-lg-5 py-5">
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body p-3">
+    <div className="px-3 px-lg-5 py-5 mb-lg-5">
+    <h3 className="text-center py-3">Currently Opened Vacancies at EF Engineering and Consalting Organization</h3>
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div className="col">
+          <div className="card h-100">
+            <div className="card-body p-3">
               <div className="d-flex">
                 <span className="fw-bold">Job Title : </span>
                 <span className="ms-2">Interior Designer</span>
@@ -28,9 +29,9 @@ const ActiveVacancy = () => {
             </div>
           </div>
         </div>
-        <div class="col">
-        <div class="card h-100">
-          <div class="card-body p-3">
+        <div className="col">
+        <div className="card h-100">
+          <div className="card-body p-3">
             <div className="d-flex">
               <span className="fw-bold">Job Title : </span>
               <span className="ms-2">Road Constraction</span>
@@ -52,8 +53,8 @@ const ActiveVacancy = () => {
           </div>
         </div>
       </div>
-        <div class="col">
-          <div class="card h-100">
+        <div className="col">
+          <div className="card h-100">
             <div className="card-body p-3">
             <div className="d-flex">
               <span className="fw-bold">Job Title : </span>
@@ -76,8 +77,8 @@ const ActiveVacancy = () => {
           </div>
             </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
+        <div className="col">
+          <div className="card h-100">
            <div className="card-body p-3">
            <div className="d-flex">
            <span className="fw-bold">Job Title : </span>
@@ -100,8 +101,8 @@ const ActiveVacancy = () => {
            </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
+        <div className="col">
+          <div className="card h-100">
            <div className="card-body p-3">
            <div className="d-flex">
            <span className="fw-bold">Job Title : </span>
@@ -124,8 +125,8 @@ const ActiveVacancy = () => {
            </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
+        <div className="col">
+          <div className="card h-100">
           <div className="card-body">
           <div className="d-flex">
           <span className="fw-bold">Job Title : </span>

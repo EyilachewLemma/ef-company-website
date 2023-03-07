@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { createSlice } from "@reduxjs/toolkit";
+import SpinnerReducer from './spinner'
 
 const teamSlice = createSlice({
   name: "teamSlice",
@@ -29,11 +30,11 @@ const companyInfoSlice = createSlice({
     },
   });
   const serviceSlice = createSlice({
-    name: "service",
-    initialState: { cervices: [] },
+    name: "serviceslice",
+    initialState: { services: [] },
     reducers: {
       setServices: (state, action) => {
-        state.cervices = action.payload;
+        state.services = action.payload;
       },
     },
   });
@@ -64,6 +65,7 @@ const companyInfoSlice = createSlice({
       },
     },
   });
+ 
 
 const store = configureStore({
   reducer: {
@@ -73,7 +75,8 @@ const store = configureStore({
     service:serviceSlice.reducer,
     project:projectSlice.reducer,
     collaborator:collaboratorSlice.reducer,
-    gallery:gallerySlice.reducer
+    gallery:gallerySlice.reducer,
+    spinner:SpinnerReducer
   },
 });
 export const actions = {
@@ -83,6 +86,6 @@ export const actions = {
   serviceAction:serviceSlice.actions,
   projectAction:projectSlice.actions,
   collaboratorAction:collaboratorSlice.actions,
-  galleryAction:gallerySlice.actions
+  galleryAction:gallerySlice.actions,
 };
 export default store;

@@ -11,10 +11,10 @@
     border-bottom: 2px solid #2A9BC4;
 }
 .cardContainer{
-    height: 35rem;
+    height: 25rem;
 }
 .card{
-    height: 40%;
+    height: 50%;
     overflow: hidden;
 }
 .card img{

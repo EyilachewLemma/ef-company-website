@@ -29,7 +29,7 @@ const router = createBrowserRouter([
       { path: "partner", element: <Partners /> },
       { path: "contact", element: <Contact /> },
       { path: "service", element: <Service /> },
-      { path: "service-detail", element: <ServiceDetail /> },
+      { path: "service/:id", element: <ServiceDetail /> },
       { path: "project", element: <Project /> },
       { path: "gallery", element: <Gallery /> },
       { path: "news", element: <News /> },
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
       { path: "project/:id", element: <ProjectDetail /> },
       {path: "vacancy",element:<ActiveVacancy />},
       { path: "vacancy/:id", element: <VacancyDetail /> },
-      { path: "application", element: <VacancyApplication /> },
+      { path: "application/:id", element: <VacancyApplication /> },
     ],
   },
 ]);
