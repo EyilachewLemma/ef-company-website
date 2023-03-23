@@ -4,13 +4,15 @@ import { useParams } from "react-router-dom";
 import StepProgressBar from "./ProgressBar";
 import Certificates from "./Certificates";
 import EducationalInfo from "./EducationalInfo";
+import ExperienceInfo from "./Experience";
 import PersonalInfo from "./PersonalInfo";
 import Documents from "./Document";
 import validatePersonalInfo from "./validatePersonalInfo";
-import apiCall from "../../url/index";
+import Spinner from 'react-bootstrap/Spinner';
+import apiCall from "../../url/filepath";
 const VacancyApplication = () => {
   const [step, setStep] = useState(1);
-  const [PersonalData, setPersonalData] = useState({
+  const [personalData, setPersonalData] = useState({
     f_name: "",
     m_name: "",
     l_name: "",
@@ -25,8 +27,10 @@ const VacancyApplication = () => {
     job_id:null
   });
   const [educationalData, setEducationalData] = useState([]);
+  const [experiences, setExperiences] = useState([]);
   const [certificates, setCertificates] = useState([]);
-  const [errors, setErrors] = useState("");
+  const [errors, setErrors] = useState({});
+  const [isLoading,setIstLoading] = useState(false)
   const {id} = useParams()
   useEffect(()=>{
     setPersonalData(prevData=>{
@@ -35,73 +39,75 @@ const VacancyApplication = () => {
   },[id])
 
   const submitApplication = async () => {
-    let formData = new FormData()
-    formData.append("f_name",PersonalData.f_name)
-    formData.append("m_name",PersonalData.m_name)
-    formData.append("l_name",PersonalData.l_name)
-    formData.append("birth_data",PersonalData.birth_data)
-    formData.append("email",PersonalData.email)
-    formData.append("phone_no",PersonalData.phone_no)
-    formData.append("cv",PersonalData.cv)
-    formData.append("supporting_doc",PersonalData.supporting_doc)
-    formData.append("city",PersonalData.city)
-    formData.append("sub_city",PersonalData.sub_city)
-    formData.append("woreda",PersonalData.woreda)
-    formData.append("job_id",PersonalData.job_id)
-    const applicantData = {
-      PersonalData:formData,
-      educationalData,
-      certificates,
-    };
+    setIstLoading(true)
+    let applicant = new FormData()
+    applicant.append("f_name",personalData.f_name)
+    applicant.append("m_name",personalData.m_name)
+    applicant.append("l_name",personalData.l_name)
+    applicant.append("birth_date",personalData.birth_date)
+    applicant.append("email",personalData.email)
+    applicant.append("phone_no",personalData.phone_no)
+    applicant.append("cv",personalData.cv)
+    applicant.append("supporting_doc",personalData.supporting_doc)
+    applicant.append("city",personalData.city)
+    applicant.append("sub_city",personalData.sub_city)
+    applicant.append("woreda",personalData.woreda)
+    applicant.append("job_id",personalData.job_id)
+    
+    educationalData.forEach((data,i)=>{
+      applicant.append(`education[${i}],`,JSON.stringify(data))
+    })
+    experiences.forEach((data,i)=>{
+      applicant.append(`experience[${i}],`,JSON.stringify(data))
+    })
+    certificates.forEach((data,i)=>{
+      applicant.append(`certificate[${i}],`,JSON.stringify(data))
+    })
     try {
-      const response = await apiCall.post("apply", applicantData);
-      if (response.status === 200) {
-        setStep(5);
+      const response = await apiCall.post("applicants", applicant);
+      if (response.status === 201) {
+        setStep(6);
       }
     } catch (err) {
       setErrors(prevErrors =>{
         return {...prevErrors,notify:"Sorry, Faild to send your application.try again"}
       });
     }
+    finally{
+      setIstLoading(false)
+    }
   };
   const nextHandler = ()=>{
     let errorValues = {}
     if(step === 1){
-      errorValues= validatePersonalInfo(PersonalData)
+      errorValues= validatePersonalInfo(personalData)
       if(Object.values(errorValues).length === 0){
         setStep((step) => step + 1)
       }
       else{
         setErrors(errorValues)
+        
       }
     }
-    // else {
-    //   setStep((step) => step + 1)
-    // }
-    setStep((step) => step + 1)
+    else{
+      setStep((step) => step + 1)
+    }
   }
   const getPage = () => {
     switch (step) {
       case 1:
-        return <PersonalInfo data={PersonalData} setData={setPersonalData} errors={errors} setErrors={setErrors} />;
+        return <PersonalInfo data={personalData} setData={setPersonalData} errors={errors} setErrors={setErrors} />;
       case 2:
-        return (
-          <EducationalInfo
-            data={educationalData}
-            setData={setEducationalData}
-          />
-        );
-      case 3:
-        return <Certificates data={certificates} setData={setCertificates} />;
+        return <EducationalInfo data={educationalData} setData={setEducationalData} />  
+        case 3:
+          return <ExperienceInfo data={experiences} setData={setExperiences} />;      
       case 4:
-        return <Documents data={PersonalData} setData={setPersonalData} errors={errors} />;
+        return <Certificates data={certificates} setData={setCertificates} />;
       case 5:
-        return (
-          <div>
-            You have added your information click submit button to finish your
-            application
-          </div>
-        );
+        return <Documents data={personalData} setData={setPersonalData} errors={errors} setErrors={setErrors} />;
+       
+      case 6:
+        return ""
 
       default:
         return <div>Some thing went wrong</div>;
@@ -110,7 +116,7 @@ const VacancyApplication = () => {
 
   return (
     <>
-      {step < 5 && (
+      {step < 6 && (
         <div>
           <div className="multi-step-progress p-3 px-md-0 pt-lg-5 ">
             <StepProgressBar step={step} />
@@ -126,7 +132,7 @@ const VacancyApplication = () => {
                   Back
                 </button>
               )}
-              {step < 4 ? (
+              {step < 5 ? (
                 <button
                   onClick={nextHandler}
                   className="next-btn px-5 py-2 ms-auto"
@@ -138,14 +144,15 @@ const VacancyApplication = () => {
                   onClick={submitApplication}
                   className="next-btn px-5 py-2 ms-auto"
                 >
-                  Submit
+                {!isLoading ? "Submit": <span>Sending <Spinner animation="border" variant="white" size="sm" /></span>}
+                  
                 </button>
               )}
             </div>
           </div>
         </div>
       )}
-      {step === 5 && (
+      {step === 6 && (
         <div className="confirmation-message">
           <div className="border border-success rounded-3 p-3 p-5 fs-5 text-success">
             Your application is successfully completed, We will contact

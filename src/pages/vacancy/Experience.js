@@ -1,22 +1,23 @@
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Toast from 'react-bootstrap/Toast';
-import validateEducationalInfo from "./validateEducationalInfo";
-const EducationalInfo = ({ data, setData }) => {
-  const [educationInfo, setEducationInfo] = useState({
+import validateExperienceinfo from "./ValidateExperience";
+const ExperienceInfo = ({ data, setData }) => {
+    
+  const [experience, setExperience] = useState({
     title: "",
     company: "",
-    qualification: "",
-    cgpa: "",
     start_date: "",
     end_date: "",
+    summary:"",
+    is_current:false
   });
   const [errors,setErrors] = useState({})
   const [show,setShow] = useState(false)
   const changeHandler = (e) => {
     const { name, value } = e.target;
-    setEducationInfo((previousInfo) => {
-      return { ...previousInfo, [name]: value };
+    setExperience((previousExperience) => {
+      return { ...previousExperience, [name]: value };
     });
     if(value){
       setErrors({...errors,[name]:""})
@@ -24,15 +25,15 @@ const EducationalInfo = ({ data, setData }) => {
   };
   const addEducationInfo = (e) => {
     e.preventDefault();
-    const errorValues = validateEducationalInfo(educationInfo)
+    const errorValues = validateExperienceinfo(experience)
     if(Object.values(errorValues)?.length > 0){
       setErrors(errorValues)
     }
     else{
       setData((previousData) => {
-        return [...data, educationInfo];
+        return [...data, experience];
       });
-      setEducationInfo({});
+      setExperience({});
       setShow(true)
     }
    
@@ -40,30 +41,29 @@ const EducationalInfo = ({ data, setData }) => {
   return (
     <>
       <div className="text-center pb-3 pb-lg-5">
-        Fill your educatinal information here,Click Add Button to save each
-        education information,you can add more than one education such as
-        degree,master... etc, finally click Next button to go to the next form
+        Fill your experience information here,Click Add Button to save each
+        experience information,you can add more than one experience. Finally click Next button to go to the next form
       </div>
 
       <Form className="border rounded p-3">
         <div className="d-md-flex">
           <Form.Group className="mb-3 me-md-4 flex-fill " controlId="fname">
-            <Form.Label>Field of Study</Form.Label>
+            <Form.Label>Position</Form.Label>
             <Form.Control
               type="text"
-              name="study_field"
-              value={educationInfo.study_field || ""}
+              name="title"
+              value={experience.title || ""}
               onChange={changeHandler}
-              className={errors.study_field ?"red-border":""}
+              className={errors.title ?"red-border":""}
               />
-              {errors.study_field ?<span className="red-text">{errors.study_field }</span>:""}
+              {errors.title ?<span className="red-text">{errors.title }</span>:""}
           </Form.Group>
           <Form.Group className="mb-3 me-3 flex-fill" controlId="mname">
-            <Form.Label>Name of Institution you Graduated</Form.Label>
+            <Form.Label>Organization</Form.Label>
             <Form.Control
               type="text"
               name="company"
-              value={educationInfo.company || ""}
+              value={experience.company || ""}
               onChange={changeHandler}
               className={errors.company ?"red-border":""}
               />
@@ -72,35 +72,11 @@ const EducationalInfo = ({ data, setData }) => {
         </div>
         <div className="d-md-flex">
           <Form.Group className="mb-3 flex-fill me-md-4" controlId="mname">
-            <Form.Label>Qualification </Form.Label>
-            <Form.Control
-              type="text"
-              name="degree_type"
-              value={educationInfo.degree_type || ""}
-              onChange={changeHandler}
-              className={errors.degree_type ?"red-border":""}
-              />
-              {errors.degree_type ?<span className="red-text">{errors.degree_type }</span>:""}
-          </Form.Group>
-          <Form.Group className="mb-3 me-3 flex-fill " controlId="fname">
-            <Form.Label>Final Grade</Form.Label>
-            <Form.Control
-              type="number"
-              name="cgpa"
-              value={educationInfo.cgpa || ""}
-              onChange={changeHandler}
-              className={errors.cgpa ?"red-border":""}
-              />
-              {errors.cgpa ?<span className="red-text">{errors.cgpa }</span>:""}
-          </Form.Group>
-        </div>
-        <div className="d-md-flex">
-          <Form.Group className="mb-3 flex-fill me-md-4" controlId="mname">
             <Form.Label>Start Date </Form.Label>
             <Form.Control
               type="date"
               name="start_date"
-              value={educationInfo.start_date || ""}
+              value={experience.start_date || ""}
               onChange={changeHandler}
               className={errors.start_date ?"red-border":""}
               />
@@ -111,7 +87,7 @@ const EducationalInfo = ({ data, setData }) => {
             <Form.Control
               type="date"
               name="end_date"
-              value={educationInfo.end_date || ""}
+              value={experience.end_date || ""}
               onChange={changeHandler}
               className={errors.end_date ?"red-border":""}
               />
@@ -147,4 +123,4 @@ const EducationalInfo = ({ data, setData }) => {
     </>
   );
 };
-export default EducationalInfo;
+export default ExperienceInfo;

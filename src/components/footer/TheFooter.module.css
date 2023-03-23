@@ -1,5 +1,5 @@
 .footerContainer{
-    background-color: #960018;
+    background-color: #0072bb;
     font-family: 'Roboto';
     font-family: 'Source Sans Pro';
     font-size: 1.2rem;
@@ -11,10 +11,32 @@
 }
 .navlink:hover{
     text-decoration: underline;
-    color: #4429ef;
+    color: #ffd900;
 }
-.desiner{
+.copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
     background-color: #111111;
     color: #fff;
     text-align: center;
 }
+
+.gototopBtn{
+    position: fixed;
+    right: 4%;
+    bottom: 7%;
+    background-color: #efcb29;
+    border: none;
+    animation-name: scrollAnimation;
+    animation-timing-function:linear;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes scrollAnimation {
+    0%   { bottom: 0%;}
+    50%  { bottom:3%;}
+    100% { bottom: 7%}
+  }

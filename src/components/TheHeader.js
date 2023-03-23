@@ -1,34 +1,53 @@
+import { useEffect } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-router-dom';
 import {RiArrowDropDownLine} from 'react-icons/ri'
-import {ImFacebook,ImTwitter} from 'react-icons/im'
+import {ImFacebook} from 'react-icons/im'
 import {AiFillLinkedin} from 'react-icons/ai'
 import {HiOutlineMail} from 'react-icons/hi'
-import logo from '../assets/edited-logo.png'
+import {BsInstagram,BsTelegram} from 'react-icons/bs'
+import { actions } from '../stores';
+import { useDispatch } from 'react-redux';
+import apiCall from '../url';
+// import logo from '../assets/edited-logo.png'
+import logo from '../assets/newlogo.png'
 const TheHeader =()=>{
-  
+  const dispach = useDispatch()
+  const fetchServices = async () => {
+    try {
+      const response = await apiCall.get("services");
+      if (response.status === 200) {
+        dispach(actions.serviceAction.setServices(response.data));
+      }
+    } catch (err) {}
+  };
+  useEffect(()=>{
+    fetchServices()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
     return (
       <>
       <div className='contact-at-header d-none d-lg-block'>
       <div className='container d-flex justify-content-between p-0'>
       <div className='fs-5 p-2'>
      <a href='https://www.facebook.com/profile.php?id=100063901428377' className='text-white'> <ImFacebook className='me-3' /></a>
-      <a href='https://twitter.com/' className='text-white'><ImTwitter className='me-3' /></a>
       <a href='https://www.linkedin.com/in/endale-abdissa-a13564234' className='text-white'><AiFillLinkedin className='me-3' /></a>
+      <a href='https://instagram.com/ef_architecture_consultanting?igshid=YmMyMTA2M2Y' className='text-white'><BsInstagram className='me-3' /></a>
+      <a href='https://t.me/efengineeringandconsulting' className='text-white'><BsTelegram className='me-3' /></a>
       </div>
       <div className='ms-auto d-flex align-items-center text-white'>
        <span className='fs-5 me-2'><HiOutlineMail /></span>
-       <span>efheadoffice1@gmail.com</span>
+       <span><i>efheadoffice1@gmail.com</i></span>
       </div>
       </div>
       </div>
      
-        <Navbar collapseOnSelect expand="lg" sticky='top' className='red-background py-2'>
+        <Navbar collapseOnSelect expand="lg" sticky='top' id='headerId' className='red-background py-2'>
       <Container>
       <NavLink to="/" className="text-decoration-none pb-1">
-      <img src={logo} alt='logo' style={{width:80,height:60}} />
+      <img src={logo} alt='logo' style={{width:150}} />
       </NavLink>
         <Navbar.Toggle aria-controls="responsive-navbar-nav text-white" />
         <Navbar.Collapse id="responsive-navbar-nav text-white">
@@ -60,25 +79,6 @@ const TheHeader =()=>{
              <NavLink to="gallery"  className={({ isActive }) =>
              isActive ? "active-menu-item" :"menu-item"}>Gallery </NavLink> 
              </div>   
-            {
-            //   <div className='dropdown-menue'>
-            //   Gallery <RiArrowDropDownLine size={30} />
-            //   <div className='dropdown-item-container py-3 border shadow-sm'>
-            //   <div>
-            //   <NavLink to="gallery"  className={({ isActive }) =>
-            //  isActive ? "active-menu-item" :"sub-menu"}>Projects</NavLink>
-            //  </div>
-            //  <div>
-            //  <NavLink to="gallery"  className={({ isActive }) =>
-            //  isActive ? "active-menu-item" :"sub-menu"}>Staffs </NavLink>
-            //  </div>
-            //  <div>
-            //  <NavLink to="gallery"  className={({ isActive }) =>
-            //  isActive ? "active-menu-item" :"sub-menu"}>Ceremony </NavLink>
-            //  </div>
-            //   </div>
-            //   </div>
-            }
             
             <NavLink to="profile" className={({ isActive }) =>
             isActive ? "active-menu-item" :"menu-item"}>Profile</NavLink>

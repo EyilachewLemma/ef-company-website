@@ -18,96 +18,101 @@ const Profile = () => {
         </h6>
 
         <div className="mt-5 container">
-          <div className="row row-cols-1 row-cols-md-3 g-4">
-            <div className="col">
-              <div className="card h-100">
-                <div className={`card-body ${styles.cardContainer}`}>
+              <div className="border rounded-3">
+                <div className={`card-body p-3 ${styles.cardContainer}`}>
                 <div className="d-flex align-items-center">
                 <span className="fs-1 text-warning"><HiEye /></span>
-                <h4 class="card-title text-center d-none d-md-block ms-3 mt-3">Our Visions</h4>
-                <h5 class="card-title text-center d-md-none ms-3 mt-3">Our Visions</h5>
+                <h4 className="card-title text-center d-none d-md-block ms-3 mt-3">Our Visions</h4>
+                <h5 className="card-title text-center d-md-none ms-3 mt-3">Our Visions</h5>
                 </div>
                 
-                  <p class="card-text d-flex">
+                  <p className="card-text d-flex">
                     <span className="text-success align-self-start">
                       <FaHandPointRight />{" "}
                     </span>
                     <span className="fs-5 ms-2">
-                      Meet global and national standards & provide technological
-                      innovations for premium value in engineering service
-                      reliable results.
+                    Meet global and national standards and provide technological innovation for premium value in engineering service reliable results.
                     </span>
                   </p>
-                  <p class="card-text d-flex">
+                  <p className="card-text d-flex">
                     <span className="text-success align-self-top">
                       <FaHandPointRight />{" "}
                     </span>
                     <span className="fs-5 ms-2">
-                      Aims to become a leading engineering consultant in
-                      Ethiopia in 2023 that provides high quality professional
-                      service to employers.
+                    Aims to become a leading engineering consultant in Ethiopia in 2023 that provides high quality professional service to employers. 
                     </span>
                   </p>
+               
                 </div>
               </div>
-            </div>
-            <div className="col">
-            <div className="card h-100">
-              <div class={`card-body ${styles.cardContainer}`}>
+            <div className="border rounded mt-3 mt-lg-4">
+              <div className={`card-body p-3 ${styles.cardContainer}`}>
               <div className="d-flex align-items-center">
               <span className="fs-2 text-warning"><FiTarget /></span>
-              <h4 class="card-title text-center d-none d-md-block ms-3 mt-3">Our Missions</h4>
-              <h5 class="card-title text-center d-md-none ms-3 mt-3">Our Missions</h5>
+              <h4 className="card-title text-center d-none d-md-block ms-3 mt-3">Our Missions</h4>
+              <h5 className="card-title text-center d-md-none ms-3 mt-3">Our Missions</h5>
               </div>
              
-                <p class="card-text d-flex">
+                <p className="card-text d-flex">
                   <span className="text-success align-self-start">
                     <FaHandPointRight />{" "}
                   </span>
                   <span className="fs-5 ms-2">
-                  Provide high quality, knowledgeable and efficient service to clients to allow them achieves their goals.
+                  As one of the top five leading architects and engineering consultants in Ethiopia and at sub–region level, EF will deliver the best customer experience in markets we serve.
                   </span>
                 </p>
-                <p class="card-text d-flex">
+                <p className="card-text d-flex">
                   <span className="text-success align-self-top">
                     <FaHandPointRight />{" "}
                   </span>
                   <span className="fs-5 ms-2">
-                  Strives to effectively utilize company resources to exceed client’s expectations in assisting them to achieve their goals.
+                  EF will meet customer expectations of highest quality with the application of appropriate technologies, methods & processes. 
+                  </span>
+                </p>
+                <p className="card-text d-flex">
+                  <span className="text-success align-self-top">
+                    <FaHandPointRight />{" "}
+                  </span>
+                  <span className="fs-5 ms-2">
+                  EF will operate at the highest levels of ethics & compliance with a focus on exemplary corporate governance and corporate citizenship.  
+                  </span>
+                </p>
+                <p className="card-text d-flex">
+                  <span className="text-success align-self-top">
+                    <FaHandPointRight />{" "}
+                  </span>
+                  <span className="fs-5 ms-2">
+                  EF will deliver best service & support with flexible customization capability; and positive operating results and financial stability.  
+                  </span>
+                </p>
+                <p className="card-text d-flex">
+                  <span className="text-success align-self-top">
+                    <FaHandPointRight />{" "}
+                  </span>
+                  <span className="fs-5 ms-2">
+                  EF will recruit, develop, motivate, reward, and retain personnel of exceptional ability, character, and dedication by providing good working conditions, superior leadership and compensation on the basis of performance.  
                   </span>
                 </p>
               </div>
             </div>
-          </div>
-          <div className="col">
-          <div className="card h-100">
-            <div class={`card-body ${styles.cardContainer}`}>
+          <div className="border rounded-3 mt-3 mt-lg-4">
+            <div className={`card-body p-3 ${styles.cardContainer}`}>
             <div className="d-flex">
             <span className="text-warning fs-2"><RiHandCoinLine /> </span>
-            <h4 class="card-title text-center d-none d-md-block ms-3 mt-3">Our Core Values</h4>
-            <h5 class="card-title text-center d-md-none ms-3 mt-3">Our Core Values</h5>
+            <h4 className="card-title text-center d-none d-md-block ms-3 mt-3">Our Core Values</h4>
+            <h5 className="card-title text-center d-md-none ms-3 mt-3">Our Core Values</h5>
             </div>
           
-              <p class="card-text d-flex">
+              <p className="card-text d-flex">
                 <span className="text-success align-self-start">
                   <FaHandPointRight />{" "}
                 </span>
                 <span className="fs-5 ms-2">
-                With our eye in a common future and sharing the pleasure of success together with as a real design and consulting.
-                </span>
-              </p>
-              <p class="card-text d-flex">
-                <span className="text-success align-self-top">
-                  <FaHandPointRight />{" "}
-                </span>
-                <span className="fs-5 ms-2">
-                We are honest and passionate in our consulting work as we seek our client’s real needs for change.
+                We are found on a number of core values that have been critical to the organization success and reflect its culture and priorities.
                 </span>
               </p>
             </div>
-          </div>
-        </div>
-          </div>
+          </div>         
         </div>
       </div>
 

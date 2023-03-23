@@ -65,6 +65,15 @@ const companyInfoSlice = createSlice({
       },
     },
   });
+  const categorySlice = createSlice({
+    name: "gategory",
+    initialState: { categories: [] },
+    reducers: {
+      setCategories: (state, action) => {
+        state.categories = action.payload;
+      },
+    },
+  });
  
 
 const store = configureStore({
@@ -76,6 +85,7 @@ const store = configureStore({
     project:projectSlice.reducer,
     collaborator:collaboratorSlice.reducer,
     gallery:gallerySlice.reducer,
+    category:categorySlice.reducer,
     spinner:SpinnerReducer
   },
 });
@@ -87,5 +97,6 @@ export const actions = {
   projectAction:projectSlice.actions,
   collaboratorAction:collaboratorSlice.actions,
   galleryAction:gallerySlice.actions,
+  categoryAction:categorySlice.actions
 };
 export default store;

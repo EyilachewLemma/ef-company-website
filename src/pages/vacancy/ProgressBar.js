@@ -6,7 +6,7 @@ const StepProgressBar = ({step}) => {
 
     return (
       <ProgressBar
-        percent={((step-1)*100/3)}
+        percent={((step-1)*100/4)}
         filledBackground="linear-gradient(to right, #010648, #010648)"
       >
         <Step transition="scale">
@@ -28,6 +28,11 @@ const StepProgressBar = ({step}) => {
         <Step transition="scale">
         {({ accomplished }) => (
           <div className={`step ${accomplished ? 'completed':''}`}>4</div>
+        )}
+      </Step>
+      <Step transition="scale">
+        {({ accomplished }) => (
+          <div className={`step ${accomplished ? 'completed':''}`}>5</div>
         )}
       </Step>
       </ProgressBar>

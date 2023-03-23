@@ -18,20 +18,18 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(12, 9, 9, 0.493); 
+    background-color: rgba(0, 0, 0, 0.319); 
 }
 .animatedTitle{
   width: 100%;
     position: absolute;
     top:30%;
     left: 7%;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 900;
     color: #fff;
     line-height: 3rem;
-    animation-name: animatedTitle;
-    animation-duration: 8s;
-    animation-iteration-count: infinite;
+   
    
 }
 @keyframes animatedTitle {
@@ -51,9 +49,7 @@
     font-size: 1.3rem;
     font-weight: bold;
     color: #fff;
-    animation-name: animatedDescription;
-    animation-duration: 8s;
-    animation-iteration-count: infinite;
+    
   }
   @keyframes animatedDescription {
     0%   { left:0px;}
@@ -69,21 +65,19 @@
     position: absolute;
     top:70%;
     left: 40%;   
-    animation-name: homeButton;
-    animation-duration: 8s;
-    animation-iteration-count: infinite;
+    
   }
 
   .homeBtn{
     font-size: 1rem;
     color: #fff;
-    border: 1px solid #fff;
+    background-color: #2A9BC4;
+    border: 1px solid #b5d3d4;
     border-radius: 1rem;
-    background: none;
     text-decoration: none;
   }
   .homeBtn:hover{
-    background-color: #2A9BC4;
+    background-color: #167cf8;
     color: #fff;
   }
   @keyframes homeButton {
@@ -96,30 +90,46 @@
     50%  { top:70%;}
     100% { display: none;}
   }
-
+@media(min-width:768px){
+  .animatedTitle{
+    animation-name: animatedTitle;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+  }
+ .animatedDescription{
+  animation-name: animatedDescription;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+ }
+ .homeBtnContainer{
+  animation-name: homeButton;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+ }
+}
     @media(max-width:768px){
+      .imageContainer{
+        width: 100%;
+        height: 30vh;
+      }
     .animatedTitle{
         font-size: 1.5rem;
         line-height: 2rem;
-        top:22%;
-        left: 10%;
+        top:15%;
+        left: 7%;
         right: 10%;
-        font-size: 2rem;
         animation-name: animatedTitlesm;
-    }
-    .inerTitle{
-      font-size: 3rem;
     }
     .animatedDescription{
         font-size: medium;
         top:40%;
-        left: 10%;  
-        right: 10%; 
+        left: 5%;  
+        right: 5%; 
         animation-name: animatedDescriptionsm;
     }
     .homeBtnContainer{
         top:70%;
-        left: 30%;   
+        left: 20%;   
         animation-name: homeButtonsm;
     }
   }

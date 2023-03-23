@@ -46,7 +46,7 @@ const OurBlogs = ({blogs}) =>{
   <img src={blog?.photos[0]?.path} alt="carousel_image"  className="img-fluid"/>
   </div>
   </NavLink>
-   <div className="pt-2">posted o {blog.created_at.slice(0,10)}</div>
+   <div className="pt-2">posted on {blog.created_at.slice(0,10)}</div>
    <NavLink to={`/news/${blog.id}`} className={`${styles.navlink} fs-4 fw-bold`}>
    {blog.title}
    </NavLink>

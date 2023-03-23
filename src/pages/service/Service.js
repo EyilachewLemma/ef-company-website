@@ -52,19 +52,24 @@ const Services = () => {
          <div className="col-md-6 col-lg-4 mt-4" key={service.id}>
            <div className="card h-100">
              <div className="card-body">                
-               <div className="d-flex">
-              {
-                // <span className="fs-1 align-self-start"><GiSpookyHouse /></span>
-              }
+               <div className="d-flex align-content-center">
+              <div>
+              <NavLink to={`/service/${service.id}`} className={`py-2 px-2`}>
+              <img src={service.icon} alt="service_icon" width={50} height={50} />
+              </NavLink>
+              
+              </div>
                <h5 className="card-title ms-3 mt-3">
                {service.title}
              </h5>
                </div>
            
                
-               <div className={`${styles.cardText} mt-2`}>
-                 {service?.short_desc}
-               </div>
+               {
+              //   <div className={`${styles.cardText} mt-2`}>
+              //    {service?.short_desc}
+              //  </div>
+               }
                <div className="mt-4">
                <NavLink to={`/service/${service.id}`} className={`${styles.seeMore} py-2 px-2`}>See More</NavLink>
                </div>

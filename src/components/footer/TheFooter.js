@@ -1,18 +1,26 @@
 import {useState,useEffect} from 'react'
-import logo from "../../assets/edited-logo.png";
+import logo from "../../assets/newlogo.png";
 import { NavLink } from "react-router-dom";
 import {GoLocation} from 'react-icons/go'
 import {BsTelephone} from 'react-icons/bs'
-import {HiOutlineMail} from 'react-icons/hi'
+import {HiOutlineMail,HiArrowNarrowUp} from 'react-icons/hi'
 import {BsFacebook} from 'react-icons/bs'
-import {AiFillTwitterCircle,AiFillLinkedin} from 'react-icons/ai'
+import {AiFillLinkedin} from 'react-icons/ai'
+import {BsInstagram,BsTelegram} from 'react-icons/bs'
 import {TbCopyright} from 'react-icons/tb'
+import { useSelector } from 'react-redux';
 import styles from "./TheFooter.module.css";
 const TheFooter = () => {
   const [year,setYear] = useState(null)
+  const [scrollHeight,setScrollHeight] = useState(0)
+ const services = useSelector(state=>state.service.services)
   useEffect(()=>{
     const date = new Date()
     setYear(date.getFullYear())
+    window.addEventListener('scroll',()=>{
+      setScrollHeight(window.pageYOffset)
+    })
+    return ()=>window.removeEventListener('scroll',()=>window.pageYOffset)
   },[])
   return (
     <>
@@ -21,7 +29,7 @@ const TheFooter = () => {
       <div className="row text-white">
       <div className="col-lg-4">
         <div className="d-flex">
-          <img src={logo} alt="logo" style={{width:80,height:60}} />
+          <img src={logo} alt="logo" style={{width:200}} />
         </div>
         <div className="text-white py-3">
           EF Architects and Engineers consulting
@@ -36,11 +44,11 @@ const TheFooter = () => {
       <div className="col-lg-4">
       <h5 className="text-ceter text-white">Our Services</h5>
       <div className="py-3">
-         <div><NavLink className={styles.navlink}>Building Architectural and Structural Design</NavLink></div>
-         <div><NavLink className={styles.navlink}>Hydraulic and Structural Engineering Design</NavLink></div>
-        <div> <NavLink className={styles.navlink}>Topographic Surveying and Design</NavLink></div>
-        <div> <NavLink className={styles.navlink}>Geotechnical Engineering, Material Testing, and Pavement Design</NavLink></div>
-        <div> <NavLink className={styles.navlink}>Transportation Planning and Feasibility Study</NavLink></div>
+      {
+        services?.length > 0 &&(
+          services.map(service=><div key={service.id}><NavLink to={`/service/${service.id}`} className={styles.navlink}>{service.title}</NavLink></div>)
+        )
+      }
       </div>
       </div>
       <div className="col-lg-4">
@@ -56,25 +64,31 @@ const TheFooter = () => {
        </div>
        <div className="d-flex align-items-center mt-2">
        <span className="text-white fs-5"><HiOutlineMail /></span>
-       <span className="ms-2">efheadoffice1@gmail.com</span>
+       <span className="ms-2"><i>efheadoffice1@gmail.com</i></span>
        </div>
-       <div className="d-flex">
+       <div className="d-flex mt-2">
        <a href="https://www.facebook.com/profile.php?id=100063901428377" className="text-white fs-3"><BsFacebook /></a>
-       <a href="https://twitter.com/" className="text-white fs-3 ms-3"><AiFillTwitterCircle /></a>
        <a href="https://www.linkedin.com/in/endale-abdissa-a13564234" className="text-white fs-3 ms-3"><AiFillLinkedin /></a>
+       <a href='https://instagram.com/ef_architecture_consultanting?igshid=YmMyMTA2M2Y' className='text-white fs-3 ms-3'><BsInstagram className='me-3' /></a>
+       <a href='https://t.me/efengineeringandconsulting' className='text-white fs-3'><BsTelegram className='me-3' /></a>
        </div>
       </div>
       </div>
     </div>    
     </div>
     
-    <div className={`${styles.desiner}`}>
-    <hr className='m-0'/>
-   <div className='d-flex justify-content-center py-3'>
-   <span className='text-white text-center'><TbCopyright />
-   </span> {year} Design By ef-architects. All Rights Reserved.
-   </div>
+    <div className={styles.copyright}>
+    <span className="fs-5"><TbCopyright /></span>
+    <span className='ms-1'>{year}</span>
+    <div className='ms-2'>All Rights Reserved.</div>
     </div>
+    {scrollHeight > 0 &&
+        <button onClick={()=>window.scrollTo(0,0)} className={`${styles.gototopBtn} rounded-circle px-3 py-2 fs-4 fw-bold`}><HiArrowNarrowUp /></button>
+      
+      
+    }
+   
+    
     </>
   );
 };

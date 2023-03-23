@@ -1,9 +1,13 @@
-
+import { useEffect } from "react";
 import Form from "react-bootstrap/Form";
-const Documents = ({data,setData,errors}) => {
+const Documents = ({data,setData,errors,setErrors}) => {
+  useEffect(()=>{
+    
+  },[])
   const changeHandler = (e) =>{
     const {name,files} = e.target
       setData({...data,[name]:files[0]})
+      setErrors({...errors,notify:""})
   }
   return (
     <>
@@ -13,7 +17,7 @@ const Documents = ({data,setData,errors}) => {
     <Form.Group className="mb-3 me-md-4 flex-fill " controlId="cv">
     <Form.Label>Upload your CV in pdf format</Form.Label>
     <Form.Control
-     type="File"
+     type="file"
      accept="application/pdf"
      name="cv"
      onChange={changeHandler}

@@ -1,18 +1,17 @@
 import BackgroundImage from "../../components/BackgroundImage";
-import { GiStarFormation } from "react-icons/gi";
-import { FaRegThumbsUp } from "react-icons/fa";
-import { CiBadgeDollar } from "react-icons/ci";
 import img1 from "../../assets/projects/project-3.jpg";
 import img2 from "../../assets/projects/project-3.png";
+import img3 from "../../assets/collaborate.jpg"
 import CompanyInfo from "../home/CompanyInfo";
 import OurTeams from "../home/OurTeams";
+import OurAttributs from "./OurAttributes"
 import { useNavigate } from "react-router-dom";
 import styles from "./About.module.css";
 const About = () => {
   const navigate = useNavigate();
   return (
     <div className={styles.aboutWraper}>
-      <div className="bg-white pb-3 pb-lg-5">
+      <div className="bg-white pb-lg-3">
         <BackgroundImage title={"About Us"} isDetail={false} longTitle="" />
         <section className="px-3">
           <div className="container">
@@ -23,9 +22,8 @@ const About = () => {
                   height="100%"
                   src="https://www.youtube.com/embed/2WLd1zCVX9g"
                   title="YouTube video player"
-                  frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
+                  allowFullScreen
                 ></iframe>
               </div>
               {}
@@ -63,45 +61,11 @@ const About = () => {
         </section>
 
         <section className={`${styles.identity} px-3 py-lg-3`}>
-          <div className="container">
-            <div className="row my-lg-5 py-5">
-              <div className="col-md-4 d-flex">
-                <span className={`${styles.iconColor} fs-1`}>
-                  <GiStarFormation />
-                </span>
-                <div className="ms-3">
-                  <h2 className="mt-2">Top Rated</h2>
-                  <div>
-                    It has made us top rated for doing work that meets the needs
-                    of our clients.
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4 d-flex">
-                <span className={`${styles.iconColor} fs-1`}>
-                  <FaRegThumbsUp />
-                </span>
-                <div className="ms-3">
-                  <h2 className="mt-2">Best Quality</h2>
-                  <div>
-                    We provide our services with a high quality that satisfies
-                    our clients.
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4 d-flex">
-                <span className={`${styles.iconColor} fs-1`}>
-                  <CiBadgeDollar />
-                </span>
-                <div className="ms-3">
-                  <h2 className="mt-2">Low Cost</h2>
-                  <div>Affordable and negotiable price for mutual benefit.</div>
-                </div>
-              </div>
-            </div>
+          <div className="container py-5">
+           <OurAttributs />
           </div>
         </section>
-        <section className="my-5 px-3 px-lg-0">
+        <section className="mt-5 px-3 px-lg-0">
           <div className="container">
             <div className="row py-lg-5">
               <div className="col-lg-6 px-0">
@@ -141,7 +105,29 @@ const About = () => {
           </div>
         </section>
       </div>
-      <div className="bg-white pb-5">
+
+      <div className="px-3 px-lg-0 pb-5 bg-white">
+      <div className="container">
+      <h3 className="text-center pb-lg-5">Collaboration and team work</h3>
+      <div className="row">
+      <div className="col-md-6 pe-lg-3">
+      <p className="fs-5">
+      We recognize that we are strong and more effective as a team than as an individual.
+      We support an open communication culture in which individual are encouraged to offer suggestion for improvement.
+      </p>
+      <p className="fs-5">
+      We recognize  that diversity is the foundation of our organization and we recognize that different viewpoints can help us anticipate and solve problems . We strongly believe that team work increase our chance of success.
+      </p>
+      </div>
+
+      <div className="col-md-6">
+      <img src={img3} alt="collabotate" className="img-fluid" />
+      </div>
+      </div>
+      </div>
+      </div>
+
+      <div className="bg-white py-5">
         <h1 className="text-center pb-5">Our Teams</h1>
         <div className="container pb-lg-5">
           <OurTeams />

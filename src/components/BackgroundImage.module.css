@@ -24,7 +24,7 @@
     
 }
 .titelHome:hover{
-    color: #2A9BC4;
+    color: rgb(255, 230, 0);
 }
 
 @media(min-width:768px){

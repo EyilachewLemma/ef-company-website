@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Spinner from 'react-bootstrap/Spinner';
@@ -7,12 +7,27 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import apiCall from '../../url';
 import validate from './validation';
 function ContactForm() {
-  const [message,setMessage] = useState({name:'',email:'',address:'',service:'',message:''})
-  const [errors,setErrors] = useState({name:'',email:'',address:'',service:'',message:'',notify:""})
+  const [message,setMessage] = useState({name:'',email:'',phone_no:"",address:'',service_id:'',message:''})
+  const [errors,setErrors] = useState({name:'',email:'',phone_no:"",address:'',message:'',notify:""})
   const [isLoading,setIsLoading] =useState(false)
   const [show,setShow] = useState(false)
+  const [services,setServices] = useState([])
+
+  const fetchServices = async () => {
+    try {
+      const response = await apiCall.get("services");
+      if (response.status === 200) {
+        setServices(response.data)
+      }
+    } catch (err) {}
+  };
+  useEffect(()=>{
+    fetchServices()
+  },[])
+
   const changeHandler = (e)=>{
-    const {name,value} =e.target
+    const {name,value} = e.target
+    console.log('name=',name," value",value)
     setMessage(prevState =>{
       return {...prevState,[name]:value}
     })
@@ -33,19 +48,20 @@ function ContactForm() {
     else {
       try{
         setIsLoading(true)
-        const response = await apiCall.post('contact',message)
-        if(response.status === 200|| 201){
-
+        const response = await apiCall.post('contacts',message)
+        if(response.status === 201 || 200){  
+          setMessage({name:'',email:'',address:'',service_id:'',message:''})       
        setShow(true)
         }
       }
       catch(err){
   setErrors(prevErrors=>{
-    return {...prevErrors,notify:"faild"}
+    return {...prevErrors,notify:"faild to send message. try again"}
   })
       }
       finally{
         setIsLoading(false)
+        
       }
     }
   }
@@ -77,34 +93,46 @@ function ContactForm() {
          <p className='red-text'>{errors.email? errors.email : ''}</p>
       </div>
     </div>
-    <div className='d-md-flex  align-items-center mt-3'>    
-    <Form.Group className='col-md-6'>
-      <Form.Control
-       type="text"
-        placeholder="Address"
-        name='address'
-        value={message.address}
-        onChange={changeHandler}
-        className='me-md-5'
-         />
-         </Form.Group>
-         <Form.Group className='col-md-5 ms-md-5'>
+    <div className='d-md-flex justify-content-between align-items-center mt-2'>    
+    <div className='flex-fill'>
+    <Form.Control
+     type="number"
+     placeholder="Phone Number *"
+      className={errors.phone_no ? 'red-border' : ''} 
+      name='phone_no'
+      value={message.phone_no}
+      onChange={changeHandler}
+       /> 
+       <p className='red-text'>{errors.phone_no? errors.phone_no : ''}</p>
+    </div>
+    <div className='flex-fill ms-md-5'>
+    <Form.Group>
+    <Form.Control
+     type="text"
+      placeholder="Address"
+      name='address'
+      value={message.address}
+      onChange={changeHandler}
+      className='me-md-5'
+       />
+       </Form.Group>
+    </div>
+  </div>
+    <div className='d-md-flex  align-items-center mt-2'>    
+         <Form.Group className='col-md-5'>
       <Form.Select
-      className={errors.service ? 'red-border mt-3 md-lg-0' : 'mt-3 md-lg-0'} 
-      name='service'
-      value={message.service}
+      name='service_id'
+      value={message.service_id}
       onChange={changeHandler}
        >
-          <option disabled value="">Services</option>
-          <option value="Building Architectural and Structural Design">Building Architectural and Structural Design</option>
-          <option value="Hydraulic and Structural Engineering Design">Hydraulic and Structural Engineering Design</option>
-          <option value="Topographic Surveying and Design">Topographic Surveying and Design</option>
-          <option value="Geotechnical Engineering, Material Testing, and Pavement Design">Geotechnical Engineering, Material Testing, and Pavement Design</option>
-          <option value="Transportation Planning and Feasibility Study">Transportation Planning and Feasibility Study</option>
-          <option value="Transportation Planning and Feasibility Study">Transportation Planning and Feasibility Study</option>
+       <option disabled value="">Services</option>
+       {
+        services.length > 0 && 
+        services.map(service=><option key={service.id} value={service.id}>{service.title}</option>)
+      }
+          
           <option value="other">Other</option>
         </Form.Select>
-        <p className='red-text'>{errors.service? errors.service : ''}</p>
         </Form.Group>
     </div>
     <FloatingLabel controlId="floatingTextarea2" label="Message..." className='mt-3 mt-md-5'>

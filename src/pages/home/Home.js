@@ -9,7 +9,7 @@ import { TbMoodHappy } from "react-icons/tb";
 import { AiTwotoneLock } from "react-icons/ai";
 import { FaTimes } from "react-icons/fa";
 import aboutImg from "../../assets/about.jpg";
-import bgImage from "../../assets/team/welcomeimage.jpg";
+import bgImage from "../../assets/endale.jpg";
 import { spinnerAction } from "../../stores/spinner.js";
 import { actions } from "../../stores/index";
 import { useDispatch, useSelector } from "react-redux";
@@ -39,10 +39,19 @@ const Home = () => {
       }
     } catch (err) {}
   };
+  const fetchCategories = async () => {
+    try {
+      const response = await apiCall.get("categories");
+      if (response.status === 200) {
+        dispach(actions.categoryAction.setCategories(response.data));
+      }
+    } catch (err) {}
+  };
 
   useEffect(() => {
     fetchNews();
     fetchServices();
+    fetchCategories()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
@@ -87,9 +96,8 @@ const Home = () => {
                     height="100%"
                     src="https://www.youtube.com/embed/2WLd1zCVX9g"
                     title="YouTube video player"
-                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
+                    allowFullScreen
                   ></iframe>
                 </div>
               )}
@@ -129,8 +137,9 @@ const Home = () => {
                     with local and international consulting firms given its
                     highly experienced professionals in the field.
                   </p>
-                    <h5 className="mt-3">Don't Hesitate to Contact us</h5>
-                  <p className="mt-2">CEO and Founder</p>
+                    <h5 className="mt-2">Don't Hesitate to Contact us</h5>
+                    <h6 className="mt-3">Endale Abddisa</h6>
+                  <h6>CEO and Founder.</h6>
                 </div>
               </div>
             </div>
@@ -213,7 +222,7 @@ const Home = () => {
         </section>
       </div>
       <CompanyInfo />
-      <div className="bg-white px-3 px-lg-0">
+      <div className="bg-white px-3 px-lg-0 pb-5">
         <div className="py-5">
           <h6 className="text-center mt-lg-5">OUR PROFESSIONALS</h6>
           <h1 className="text-center">Meet Our Teams</h1>
@@ -223,15 +232,6 @@ const Home = () => {
         </div>
       </div>
       <div className="bg-white">
-        {
-          //   <div className="testimonial-container px-3 px-lg-0 py-5">
-          // <div className="container">
-          // <div className="testimonial-title text-center pt-2 pt-lg-5 ">TESTIMONIAL</div>
-          // <div className="fs-1 fw-bold text-center pb-5">People Say About Us</div>
-          // <Testimonials />
-          // </div>
-          // </div>
-        }
         <section className="ourblog-conaner-athome py-5">
           <h6 className="text-center pt-5">OUR BLOGS</h6>
           <h1 className="text-center">Our Latest News</h1>

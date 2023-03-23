@@ -3,9 +3,12 @@ import "react-multi-carousel/lib/styles.css";
 import styles from './HomeCarosel.module.css'
 import home1 from '../assets/home/home1.jpg'
 import home2 from '../assets/home/home2.jpg'
-import home5 from '../assets/home/home5.jpg'
+import home3 from '../assets/home/home3.jpg'
+import home4 from '../assets/home/home4.jpg'
 import home6 from '../assets/home/home6.jpg'
-
+import home7 from '../assets/home/home7.jpg'
+import home8 from '../assets/home/home8.jpg'
+import home9 from '../assets/home/home9.jpg'
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -23,7 +26,7 @@ const responsive = {
     slidesToSlide: 1 // optional, default to 1.
   }
 };
-const imageItem = (img)=>{
+const imageItem = (img)=>{ 
     
   return (
     <div className={styles.imageContainer}>
@@ -64,8 +67,13 @@ const HomeCarosel = () =>{
 >
   {imageItem(home1)}
   {imageItem(home2)}
-  {imageItem(home5)}
+  {imageItem(home3)}
+  {imageItem(home4)}
   {imageItem(home6)}
+  {imageItem(home7)}
+  {imageItem(home8)}
+  {imageItem(home9)}
+  
   
 </Carousel>
     )

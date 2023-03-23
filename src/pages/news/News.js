@@ -1,12 +1,31 @@
-// import { useState } from "react";
+import { useEffect } from "react";
 import BackgroundImage from "../../components/BackgroundImage";
 import styles from "./News.module.css";
 import { NavLink } from "react-router-dom";
 import CompanyInfo from "../home/CompanyInfo";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { spinnerAction } from "../../stores/spinner";
+import { actions } from "../../stores";
+import apiCall from "../../url";
 const News = () => {
   const news = useSelector(state=>state.news.news)
-  console.log(news)
+ const dispach = useDispatch()
+  const fetchNews = async () => {
+    dispach(spinnerAction.setIsLoading(true));
+    try {
+      const response = await apiCall.get("news");
+      if (response.status === 200) {
+        dispach(actions.newsAction.setNews(response.data));
+      }
+    } catch (err) {
+    } finally {
+      dispach(spinnerAction.setIsLoading(false));
+    }
+  };
+  useEffect(()=>{
+    fetchNews()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
   return (
     <div className={styles.newsWraper}>
       <BackgroundImage title={"News"} isDetail={false} longTitle='' />
@@ -16,7 +35,7 @@ const News = () => {
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
            
           {
-            news?.length > 0 &&(
+            news?.length > 0 &&
               news.map(singleNews=>(
           <div key={singleNews.id} className={`col ${styles.cardHeight}`}>
               <div className="card h-100">
@@ -41,7 +60,7 @@ const News = () => {
                 </div>
               </div>
             </div>           
-            )))}
+            ))}
                 
           </div>
         </div>

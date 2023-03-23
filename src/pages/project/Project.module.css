@@ -1,5 +1,5 @@
 .projectWraper{
-    background-image: url('../../assets/bgimg/bg4.png');
+    background-image: url('../../assets/bgimg/bg1.jpg');
     background-size: cover;
     background-attachment: fixed;
 }
@@ -10,9 +10,9 @@
 .selectionBtn:hover,.selectionBtn:focus{
     border-bottom: 2px solid #2A9BC4;
 }
-.cardContainer{
+/* .cardContainer{
     height: 25rem;
-}
+} */
 .card{
     height: 50%;
     overflow: hidden;
@@ -38,4 +38,12 @@
 .cardTitle:hover{
     color: #2A9BC4;
     border-bottom: 2px solid #2A9BC4;
+}
+.categoryContainer{
+    border-right: 1px solid rgb(194, 193, 191);
+}
+.categoryBtn{
+    background: none;
+    border: none;
+    margin-top: 1rem;
 }
