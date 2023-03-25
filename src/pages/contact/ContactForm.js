@@ -131,7 +131,7 @@ function ContactForm() {
         services.map(service=><option key={service.id} value={service.id}>{service.title}</option>)
       }
           
-          <option value="other">Other</option>
+          <option value="">Other</option>
         </Form.Select>
         </Form.Group>
     </div>

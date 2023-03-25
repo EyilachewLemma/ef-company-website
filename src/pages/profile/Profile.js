@@ -66,7 +66,7 @@ const Profile = () => {
                     <FaHandPointRight />{" "}
                   </span>
                   <span className="fs-5 ms-2">
-                  EF will meet customer expectations of highest quality with the application of appropriate technologies, methods & processes. 
+                  We will meet customer expectations of highest quality with the application of appropriate technologies, methods & processes. 
                   </span>
                 </p>
                 <p className="card-text d-flex">
@@ -74,7 +74,7 @@ const Profile = () => {
                     <FaHandPointRight />{" "}
                   </span>
                   <span className="fs-5 ms-2">
-                  EF will operate at the highest levels of ethics & compliance with a focus on exemplary corporate governance and corporate citizenship.  
+                  We will operate at the highest levels of ethics & compliance with a focus on exemplary corporate governance and corporate citizenship.  
                   </span>
                 </p>
                 <p className="card-text d-flex">
@@ -82,7 +82,7 @@ const Profile = () => {
                     <FaHandPointRight />{" "}
                   </span>
                   <span className="fs-5 ms-2">
-                  EF will deliver best service & support with flexible customization capability; and positive operating results and financial stability.  
+                  We will deliver best service & support with flexible customization capability; and positive operating results and financial stability.  
                   </span>
                 </p>
                 <p className="card-text d-flex">
@@ -90,7 +90,7 @@ const Profile = () => {
                     <FaHandPointRight />{" "}
                   </span>
                   <span className="fs-5 ms-2">
-                  EF will recruit, develop, motivate, reward, and retain personnel of exceptional ability, character, and dedication by providing good working conditions, superior leadership and compensation on the basis of performance.  
+                  We will recruit, develop, motivate, reward, and retain personnel of exceptional ability, character, and dedication by providing good working conditions, superior leadership and compensation on the basis of performance.  
                   </span>
                 </p>
               </div>

@@ -27,7 +27,7 @@ const OurTeams = () =>{
   const [teams,setTeams] = useState([])
   const fechTeams = async() =>{
     try{
-      const response = await apiCall.get('teams')
+      const response = await apiCall.get('get_teams')
       if(response.status === 200){
         setTeams(response.data)
       }
