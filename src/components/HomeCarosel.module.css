@@ -24,8 +24,8 @@
   width: 100%;
     position: absolute;
     top:30%;
-    left: 12%;
-    font-size: 3rem;
+    left: 8%;
+    font-size: 4rem;
     font-weight: 900;
     color: #fff;
     line-height: 3rem;
@@ -45,8 +45,8 @@
   .animatedDescription{
     position: absolute;
     top:45%;
-    left: 12%;
-    font-size: 1.3rem;
+    left: 10%;
+    font-size: 1.6rem;
     font-weight: bold;
     color: #fff;
     
