@@ -6,7 +6,7 @@ import {BsTelephone} from 'react-icons/bs'
 import {HiOutlineMail,HiArrowNarrowUp} from 'react-icons/hi'
 import {BsFacebook} from 'react-icons/bs'
 import {AiFillLinkedin} from 'react-icons/ai'
-import {BsInstagram,BsTelegram} from 'react-icons/bs'
+import {BsInstagram,BsTelegram,BsArrowRightShort} from 'react-icons/bs'
 import {TbCopyright} from 'react-icons/tb'
 import { useSelector } from 'react-redux';
 import styles from "./TheFooter.module.css";
@@ -46,7 +46,10 @@ const TheFooter = () => {
       <div className="py-3">
       {
         services?.length > 0 &&(
-          services.map(service=><div key={service.id}><NavLink to={`/service/${service.id}`} className={styles.navlink}>{service.title}</NavLink></div>)
+          services.map(service=><div key={service.id}>
+            <span className='me-2 text-white fw-bold fs-5'><BsArrowRightShort /></span>
+            <NavLink to={`/service/${service.id}`} className={styles.navlink}>{service.title}</NavLink>
+            </div>)
         )
       }
       </div>
@@ -80,7 +83,7 @@ const TheFooter = () => {
     <div className={styles.copyright}>
     <span className="fs-5"><TbCopyright /></span>
     <span className='ms-1'>{year}</span>
-    <div className='ms-2'>All Rights Reserved.</div>
+    <div className='ms-2'>EF Architect and Engineering Consulting All Rights Reserved.</div>
     </div>
     {scrollHeight > 0 &&
         <button onClick={()=>window.scrollTo(0,0)} className={`${styles.gototopBtn} rounded-circle px-3 py-2 fs-4 fw-bold`}><HiArrowNarrowUp /></button>
