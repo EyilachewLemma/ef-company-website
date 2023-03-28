@@ -1,7 +1,7 @@
 
 *{
 font-family: 'Roboto', sans-serif;
-font-family: 'Source Sans Pro', sans-serif; 
+/* font-family: 'Source Sans Pro', sans-serif;  */
 }
 html,body{ scroll-behavior: smooth}
 .app{
@@ -24,13 +24,19 @@ h4,
 h5,
 h6 {
   color: #2A9BC4;
-  font-family: "Jost", sans-serif;
-  font-weight: 600;
+  font-family: "poppins", sans-serif;
+  font-weight: 500;
 }
 h6{
   color: #122e74;
-  font-family: "Jost", sans-serif;
+  font-family: "poppins", sans-serif;
   font-weight: 600;
+}
+p,span{
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+
 }
 
 /* global colors */
@@ -39,7 +45,7 @@ h6{
   color: #fff!important;
 }
 .red-background{
-  background-color: #0072bb;;
+  background-color: #0072bb;
   color: #fff!important;
 }
 .blue-text{
@@ -66,21 +72,30 @@ h6{
 }
 /* header section */
 .contact-at-header{
-  background-color: #313131;
+  background-color: #09143c;
+}
+.email-contact{
+  font-family: "poppins",sans-serif;
+    font-weight: 300;
+    text-decoration: none;
+    color: #fff;
+}
+.email-contact:hover{
+  color: hsl(55, 100%, 50%);
 }
   
   .menu-item{
     text-decoration: none;
     margin-left: 1rem;
-    font-weight: bolder;
-    font-size: large;
+    font-family: "poppins",sans-serif;
+    font-weight: 600;
     color: #fff;
   }
   .sub-menu{
     text-decoration: none;
     margin-left: 1rem;
-    font-weight: bolder;
-    font-size: large;
+    font-family: "poppins",sans-serif;
+    font-weight: 400;
     color: black;
   }
   .menu-item:hover,.sub-menu:hover{
@@ -89,15 +104,15 @@ h6{
   .active-menu-item{
     text-decoration: none;
     margin-left: 1rem;
-    font-weight: bolder;
-    font-size: large;
+    font-family: "poppins",sans-serif;
+    font-weight: 600;
     color: rgb(255, 225, 0);
   }
   .dropdown-menue{
     text-decoration: none;
     margin-left: 1rem;
-    font-weight: bolder;
-    font-size: large;
+    font-family: "poppins",sans-serif;
+    font-weight: 600;
     color: #fff;
     position: relative;
   }
@@ -113,12 +128,7 @@ h6{
     position: absolute;
     top: 5;
   }
- /* company info big text */
- .big-text{
-  font-size: 3.5rem;
-  font-weight: 700;
-  font-family: "Jost", sans-serif;
- }
+ 
 @media(max-width:768px){
   .big-text{
     font-size: 2rem;
@@ -217,6 +227,12 @@ h6{
   .why-choose-us-card:hover h4{
     color: rgb(15, 238, 15);
   }
+  /* company info big text */
+ .big-text{
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: "Jost", sans-serif;
+ }
   .dark-blue-text{
     color: #010648;
   }

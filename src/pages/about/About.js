@@ -30,20 +30,20 @@ const About = () => {
               <div className="col-lg-6 mt-2 mt-lg-0 pb-lg-3">
                 <h6>Welcome to EF</h6>
                 <h3>Architectural and Engineering consulting services</h3>
-                <p className={styles.psize}>
+                <p>
                   We are a professional engineering firm staffed and organized
                   to provide Architectural and Engineering consulting services.
                   Established in 2015 by a group of young ambitious and
                   competent Architects, Engineers and other expertise which have
                   great experience in their respective.
                 </p>
-                <p className={styles.psize}>
+                <p>
                   We have been involved in the design of various projects in the
                   past year on Five Rural Transformation Center , Five
                   Warehouse, University Projects designs and Construction Works,
                   Addis Ababa Housing Project, and Mixed Use Buildings.
                 </p>
-                <p className={styles.psize}>
+                <p>
                   It is a firm of consulting Architects and Engineers Head
                   Office in Addis Ababa. Kifle Ketema-Yeka in the road from
                   Megenagna to Lamberet Lame Dairy (Shola Milk) Building first
@@ -73,7 +73,7 @@ const About = () => {
                   <h1 className="fs-1 fw-bold">10</h1>
                   <h3 className="ms-2">Years of Experience</h3>
                 </div>
-                <p className={`pe-lg-5 ${styles.psize}`}>
+                <p className={`pe-lg-5`}>
                   EF Architects and Engineers consulting plc. has been involved
                   in the design of various projects in the past year since its
                   foundation. Some of the major projects are Rural
@@ -94,7 +94,7 @@ const About = () => {
                 </div>
                 <div className="mt-3 ps-lg-5">
                   <h3>EF Architects and Engineers consulting</h3>
-                  <p className={styles.psize}>
+                  <p>
                     Invests in the training and development of its staff to have
                     the best-equipped people working and develop the skills and
                     professionalism of its project teams and support staff.
@@ -111,11 +111,11 @@ const About = () => {
       <h3 className="text-center pb-lg-5">Collaboration and team work</h3>
       <div className="row">
       <div className="col-md-6 pe-lg-3">
-      <p className="fs-5">
+      <p>
       We recognize that we are strong and more effective as a team than as an individual.
       We support an open communication culture in which individual are encouraged to offer suggestion for improvement.
       </p>
-      <p className="fs-5">
+      <p>
       We recognize  that diversity is the foundation of our organization and we recognize that different viewpoints can help us anticipate and solve problems . We strongly believe that team work increase our chance of success.
       </p>
       </div>

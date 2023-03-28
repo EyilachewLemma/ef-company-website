@@ -1,10 +1,14 @@
 .footerContainer{
-    background-color: #0072bb;
+    background-color: #09143c;
     font-family: 'Roboto';
     font-family: 'Source Sans Pro';
     font-size: 1.2rem;
 }
+.textSmall{
+    font-size: 17px;
+}
 .navlink{
+    font-size: 17px;
     text-decoration: none;
     color: #fff;
 
@@ -13,12 +17,13 @@
     text-decoration: underline;
     color: #ffd900;
 }
+
 .copyright{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px 0;
-    background-color: #111111;
+    background-color: #0072bb;
     color: #fff;
     text-align: center;
 }

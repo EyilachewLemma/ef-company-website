@@ -39,7 +39,7 @@ const TheHeader =()=>{
       </div>
       <div className='ms-auto d-flex align-items-center text-white'>
        <span className='fs-5 me-2'><HiOutlineMail /></span>
-       <span><i>efheadoffice1@gmail.com</i></span>
+       <a href = "mailto: efheadoffice1@gmail.com" className='email-contact'><i>efheadoffice1@gmail.com / info@efengineering-consultancy.com</i></a>
       </div>
       </div>
       </div>
@@ -65,7 +65,7 @@ const TheHeader =()=>{
             <div className='dropdown-menue'>
              Collaboraters <RiArrowDropDownLine size={30} />
              <div className='dropdown-item-container py-3 border shadow-sm'>
-             <div>
+             <div className='mb-2'>
              <NavLink to="client" className={({ isActive }) =>
             isActive ? "active-menu-item" :"sub-menu"}>Clients</NavLink>
             </div>

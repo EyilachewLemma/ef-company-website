@@ -63,10 +63,10 @@ const Home = () => {
           <div className="d-lg-flex my-lg-5 pt-5 pb-lg-5 position-relative ">
             <div className="py-lg-4">
               <h4 className="text-center">ABOUT US</h4>
-              <div className="fw-bold fs-1 dark-blue-text">
+              <h1>
                 EF - Stands for Synergy, Innovation & Excellence.
-              </div>
-              <p className="fs-5 pe-lg-5">
+              </h1>
+              <p className="pe-lg-5">
                 We Provide High Quality and Cost-Effective Services within
                 Specified Time. Continually Strives to Protect the Environment
                 Under Its Corporate Social Responsibilities. We Are All
@@ -116,7 +116,7 @@ const Home = () => {
           <div className="welcome-wraper p-lg-5">
             <div className="container">
               <div className="row p-3">
-                <div className="welcome-img col-lg-5 me-lg-5 p-0">
+                <div className="welcome-img rounded-3 bg-white col-lg-5 me-lg-5 p-0">
                   <img
                     src={bgImage}
                     alt="general_manager"
@@ -125,8 +125,8 @@ const Home = () => {
                 </div>
                 <div className="col-lg-6 border rounded-3 shadow-sm bg-white p-3 p-lg-4 mt-3 mt-lg-0">
                   <h2>Well Come Dear Client</h2>
-                  <p className="fs-6">
-                    <span className="fs-4 fw-bold">EF Architecture and Engineering consulting</span>  has been involved in
+                  <p>
+                    <span className="fs-5 fw-bold">EF Architecture and Engineering consulting</span>  has been involved in
                     the design of various projects in the past year on Five
                     Rural Transformation Center , Five Warehouse, University
                     Projects designs and Construction Works, Addis Ababa Housing
@@ -155,66 +155,56 @@ const Home = () => {
             <div className="row">
               <div className="col-md-6 col-lg-3 px-3 mt-2 mt-lg-0">
                 <div className="border rounded-3 shadow-lg p-3 h-100 why-choose-us-card">
-                  <div className="d-flex align-items-center">
-                    <span className="text-warning fs-1">
-                      {" "}
-                      <FaBalanceScale />
-                    </span>
-                    <h4 className="ms-3">Honesty</h4>
+                  <div className="d-flex justify-content-center align-items-center">
+                      <FaBalanceScale className="text-warning fs-2"></FaBalanceScale>
+                    
+                    <h4 className="ms-2 align-self-center mt-2">Honesty</h4>
                   </div>
-                  <div className="mt-2 dark-blue-text fs-5">
+                  <p className="mt-2">
                     We strive to be reliable in the construction industry and
                     build trust and confidence in our ability to anticipate and
                     respond to the client needs and to what the contract urges
                     on.
-                  </div>
+                  </p>
                 </div>
               </div>
               <div className="col-md-6 col-lg-3 px-3  mt-2 mt-lg-0">
                 <div className="border rounded-3 shadow-lg p-3 h-100 why-choose-us-card">
-                  <div className="d-flex align-items-center">
-                    <span className="text-warning fs-1">
-                      {" "}
-                      <TbMoodHappy />
-                    </span>
-                    <h4 className="ms-3">Quality</h4>
+                  <div className="d-flex justify-content-center">
+                   
+                      <TbMoodHappy className="text-warning fs-2"></TbMoodHappy>
+                    <h4 className="ms-2 mt-1">Quality</h4>
                   </div>
-                  <div className="mt-2 dark-blue-text fs-5">
+                  <p className="mt-2">
                     Professional excellence: outstanding professionalism We
                     offer service of super quality based on our accumulated,
                     extensive and profound knowledge and experience.
-                  </div>
+                  </p>
                 </div>
               </div>
               <div className="col-md-6 col-lg-3 px-3   mt-2 mt-lg-0">
                 <div className="border rounded-3 shadow-lg p-3 h-100 why-choose-us-card">
-                  <div className="d-flex align-items-center">
-                    <span className="text-warning fs-1">
-                      {" "}
-                      <AiTwotoneLock />
-                    </span>
-                    <h4 className="ms-3">Client centric</h4>
+                  <div className="d-flex justify-content-center">
+                      <AiTwotoneLock className="text-warning fs-2" />
+                    <h4 className="ms-2 mt-1">Client centric</h4>
                   </div>
-                  <div className="mt-2 dark-blue-text fs-5">
+                  <p className="mt-2">
                     We are proud of always thinking in terms of what is best for
                     our clients offering solutions that are not only theoretical
                     but workable
-                  </div>
+                  </p>
                 </div>
               </div>
               <div className="col-md-6 col-lg-3 px-3 mt-2 mt-lg-0">
                 <div className="border rounded-3 shadow-lg p-3 h-100 why-choose-us-card">
-                  <div className="d-flex align-items-center">
-                    <span className="text-warning fs-1">
-                      {" "}
-                      <FaQuestionCircle />
-                    </span>
-                    <h4 className="ms-3">Responsible</h4>
+                  <div className="d-flex justify-content-center">
+                      <FaQuestionCircle className="text-warning fs-2"></FaQuestionCircle>
+                    <h4 className="ms-2 mt-1">Responsible</h4>
                   </div>
-                  <div className="mt-2 dark-blue-text fs-5">
+                  <p className="mt-2">
                     We take responsibility for our action and hold our services
                     accountable for the results and outcomes.
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>

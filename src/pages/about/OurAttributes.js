@@ -47,10 +47,10 @@ const OurAttributs = () => {
     </span>
     <div className="ms-3">
       <h2 className="mt-2">Top Rated</h2>
-      <div className="pe-lg-5">
+      <p className="pe-lg-5">
         It has made us top rated for doing work that meets the needs
         of our clients.
-      </div>
+      </p>
     </div>
   </div>
   <div className={`d-flex ${styles.sliderContainer}`}>
@@ -59,9 +59,9 @@ const OurAttributs = () => {
                 </span>
                 <div className="ms-3">
                   <h2 className="mt-2">Best Quality</h2>
-                  <div className="pe-lg-5">
+                  <p className="pe-lg-5">
                   We pride ourselves on the quality and accuracy of work we produce and this continues to be one of the fundamental principles behind our success as leading Engineering consultant.
-                  </div>
+                  </p>
                 </div>
               </div>
               <div className={`d-flex ${styles.sliderContainer}`}>
@@ -70,7 +70,7 @@ const OurAttributs = () => {
                 </span>
                 <div className="ms-3">
                   <h2 className="mt-2">Low Cost</h2>
-                  <div className="pe-lg-5">Affordable and negotiable price for mutual benefit.</div>
+                  <p className="pe-lg-5">Affordable and negotiable price for mutual benefit.</p>
                 </div>
               </div>
               <div className={`d-flex ${styles.sliderContainer}`}>
@@ -79,7 +79,7 @@ const OurAttributs = () => {
               </span>
               <div className="ms-3">
                 <h2 className="mt-2">Integrity </h2>
-                <div className="pe-lg-5">We behave ethically and respect open and honest in our business and personal lives.</div>
+                <p className="pe-lg-5">We behave ethically and respect open and honest in our business and personal lives.</p>
               </div>
             </div>
             <div className={`d-flex ${styles.sliderContainer}`}>
@@ -88,7 +88,7 @@ const OurAttributs = () => {
             </span>
             <div className="ms-3">
               <h2 className="mt-2">Employee Locality  </h2>
-              <div className="pe-lg-5">We make every effort to attract and retain excellent ,motivated Employee who  are the source of our Success.</div>
+              <p className="pe-lg-5">We make every effort to attract and retain excellent ,motivated Employee who  are the source of our Success.</p>
             </div>
           </div>
           <div className={`d-flex ${styles.sliderContainer}`}>
@@ -97,7 +97,7 @@ const OurAttributs = () => {
           </span>
           <div className="ms-3">
             <h2 className="mt-2">Client Satisfaction   </h2>
-            <div className="pe-lg-5">We engage our clients and the communities we serve so that they knows us, trust and value our service .</div>
+            <p className="pe-lg-5">We engage our clients and the communities we serve so that they knows us, trust and value our service .</p>
           </div>
         </div>
     </Carousel>

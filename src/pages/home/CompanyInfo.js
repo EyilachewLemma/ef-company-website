@@ -6,30 +6,30 @@ const CompanyInfo = () =>{
         <div className="container d-lg-flex py-lg-5">
         <div className="d-flex me-lg-3 flex-fill">
         <div className="flex-fill text-white">
-        <p className="text-center big-text fw-bold">
-        <CountUp end={10} enableScrollSpy /> 
-        </p>
-        <p className="text-center fs-5">Years Of Experience</p>
+        <div className="text-center big-text fw-bold">
+        <CountUp end={10} enableScrollSpy className='big-text' /> 
+        </div>
+        <div className="text-center fw-bold fs-5">Years Of Experience</div>
         </div>
         <div className="flex-fill text-white"> 
-        <p className="text-center big-text fw-bold">
-        <CountUp end={39} enableScrollSpy /> 
-        </p>
-        <p className="text-center fs-5">Expert Specialist</p>
+        <div className="text-center big-text fw-bold">
+        <CountUp end={39} enableScrollSpy className='big-text' /> 
+        </div>
+        <div className="text-center fw-bold fs-5">Expert Specialist</div>
         </div>
         </div>
         <div className="d-flex flex-fill text-white">
         <div className="flex-fill">
-        <p className="text-center big-text fw-bold">
-        <CountUp end={27} enableScrollSpy /> 
-        +</p>
-        <p className="text-center fs-5">Successful Project</p>
+        <div className="text-center big-text fw-bold">
+        <CountUp end={27} enableScrollSpy className='big-text' /> 
+        +</div>
+        <div className="text-center fw-bold fs-5">Successful Project</div>
         </div>
         <div className="flex-fill"> 
-        <p className="text-center big-text fw-bold">
-        <CountUp end={210} enableScrollSpy /> 
-        +</p>
-        <p className="text-center fs-5">Happy Customers</p>
+        <div className="text-center big-text fw-bold">
+        <CountUp end={210} enableScrollSpy className='big-text' /> 
+        +</div>
+        <div className="text-center fw-bold fs-5">Happy Customers</div>
         </div>
         </div>
         </div>

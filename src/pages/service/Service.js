@@ -52,14 +52,14 @@ const Services = () => {
          <div className="col-md-6 col-lg-4 mt-4" key={service.id}>
            <div className="card h-100">
              <div className="card-body">                
-               <div className="d-flex align-content-center">
+               <div className="d-flex align-items-center">
               <div>
               <NavLink to={`/service/${service.id}`} className={`py-2 px-2`}>
-              <img src={service.icon} alt="service_icon" width={50} height={50} />
+              <img src={service.icon} alt="service_icon" width={100} height={100} />
               </NavLink>
               
               </div>
-               <h5 className="card-title ms-3 mt-3">
+               <h5 className="card-title ms-2 align-self-center">
                {service.title}
              </h5>
                </div>

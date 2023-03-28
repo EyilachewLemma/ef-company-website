@@ -30,7 +30,7 @@ const Profile = () => {
                     <span className="text-success align-self-start">
                       <FaHandPointRight />{" "}
                     </span>
-                    <span className="fs-5 ms-2">
+                    <span className="ms-2">
                     Meet global and national standards and provide technological innovation for premium value in engineering service reliable results.
                     </span>
                   </p>
@@ -38,7 +38,7 @@ const Profile = () => {
                     <span className="text-success align-self-top">
                       <FaHandPointRight />{" "}
                     </span>
-                    <span className="fs-5 ms-2">
+                    <span className="ms-2">
                     Aims to become a leading engineering consultant in Ethiopia in 2023 that provides high quality professional service to employers. 
                     </span>
                   </p>
@@ -57,7 +57,7 @@ const Profile = () => {
                   <span className="text-success align-self-start">
                     <FaHandPointRight />{" "}
                   </span>
-                  <span className="fs-5 ms-2">
+                  <span className="ms-2">
                   As one of the top five leading architects and engineering consultants in Ethiopia and at sub–region level, EF will deliver the best customer experience in markets we serve.
                   </span>
                 </p>
@@ -65,7 +65,7 @@ const Profile = () => {
                   <span className="text-success align-self-top">
                     <FaHandPointRight />{" "}
                   </span>
-                  <span className="fs-5 ms-2">
+                  <span className="ms-2">
                   We will meet customer expectations of highest quality with the application of appropriate technologies, methods & processes. 
                   </span>
                 </p>
@@ -73,7 +73,7 @@ const Profile = () => {
                   <span className="text-success align-self-top">
                     <FaHandPointRight />{" "}
                   </span>
-                  <span className="fs-5 ms-2">
+                  <span className="ms-2">
                   We will operate at the highest levels of ethics & compliance with a focus on exemplary corporate governance and corporate citizenship.  
                   </span>
                 </p>
@@ -81,7 +81,7 @@ const Profile = () => {
                   <span className="text-success align-self-top">
                     <FaHandPointRight />{" "}
                   </span>
-                  <span className="fs-5 ms-2">
+                  <span className="ms-2">
                   We will deliver best service & support with flexible customization capability; and positive operating results and financial stability.  
                   </span>
                 </p>
@@ -89,7 +89,7 @@ const Profile = () => {
                   <span className="text-success align-self-top">
                     <FaHandPointRight />{" "}
                   </span>
-                  <span className="fs-5 ms-2">
+                  <span className="ms-2">
                   We will recruit, develop, motivate, reward, and retain personnel of exceptional ability, character, and dedication by providing good working conditions, superior leadership and compensation on the basis of performance.  
                   </span>
                 </p>
@@ -107,7 +107,7 @@ const Profile = () => {
                 <span className="text-success align-self-start">
                   <FaHandPointRight />{" "}
                 </span>
-                <span className="fs-5 ms-2">
+                <span className="ms-2">
                 We are found on a number of core values that have been critical to the organization success and reflect its culture and priorities.
                 </span>
               </p>

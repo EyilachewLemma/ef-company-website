@@ -31,7 +31,7 @@ const TheFooter = () => {
         <div className="d-flex">
           <img src={logo} alt="logo" style={{width:200}} />
         </div>
-        <div className="text-white py-3">
+        <div className={`${styles.textSmall} text-white py-3`}>
           EF Architects and Engineers consulting
            is a professional engineering
           firm staffed and organized to provide 
@@ -66,14 +66,18 @@ const TheFooter = () => {
        <span className="ms-2">+251 116 677479 / +251 911 240283</span>
        </div>
        <div className="d-flex align-items-center mt-2">
-       <span className="text-white fs-5"><HiOutlineMail /></span>
-       <span className="ms-2"><i>efheadoffice1@gmail.com</i></span>
+       <span className="text-white fs-5 align-self-start me-2"><HiOutlineMail /></span>
+       <a href = "mailto: efheadoffice1@gmail.com" className={styles.navlink}><i>efheadoffice1@gmail.com</i></a>
+       </div>
+       <div className="d-flex align-items-center mt-2">
+       <span className="text-white fs-5 align-self-start me-2"><HiOutlineMail /></span>
+       <a href = "mailto: info@efengineering-consultancy.com" className={styles.navlink}><i>info@efengineering-consultancy.com</i></a>
        </div>
        <div className="d-flex mt-2">
-       <a href="https://www.facebook.com/profile.php?id=100063901428377" className="text-white fs-3"><BsFacebook /></a>
-       <a href="https://www.linkedin.com/in/endale-abdissa-a13564234" className="text-white fs-3 ms-3"><AiFillLinkedin /></a>
-       <a href='https://instagram.com/ef_architecture_consultanting?igshid=YmMyMTA2M2Y' className='text-white fs-3 ms-3'><BsInstagram className='me-3' /></a>
-       <a href='https://t.me/efengineeringandconsulting' className='text-white fs-3'><BsTelegram className='me-3' /></a>
+       <a href="https://www.facebook.com/profile.php?id=100063901428377" className="text-white fs-5"><BsFacebook /></a>
+       <a href="https://www.linkedin.com/in/endale-abdissa-a13564234" className="text-white fs-5 ms-3"><AiFillLinkedin /></a>
+       <a href='https://instagram.com/ef_architecture_consultanting?igshid=YmMyMTA2M2Y' className='text-white fs-5 ms-3'><BsInstagram className='me-3' /></a>
+       <a href='https://t.me/efengineeringandconsulting' className='text-white fs-5'><BsTelegram className='me-3' /></a>
        </div>
       </div>
       </div>

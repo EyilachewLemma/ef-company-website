@@ -66,7 +66,7 @@ const OurTeams = () =>{
       <h5 className="card-title">{team.profession}</h5>
       <p className="card-text">
       <RiDoubleQuotesL /> 
-<span className="fs-5">{team.quote}</span>
+<span style={{fontWeight:400}}>{team.quote}</span>
  <RiDoubleQuotesR />
       </p>
     </div>

@@ -30,7 +30,7 @@ const News = () => {
     <div className={styles.newsWraper}>
       <BackgroundImage title={"News"} isDetail={false} longTitle='' />
       <div className="bg-white px-3 px-lg-0 pb-lg-5 py-5">
-          <h1 className="text-center py-lg-5">Latest News</h1>
+          <h1 className="text-center py-lg-5">News And Advertising</h1>
         <div className="mt-5 container">
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
            
