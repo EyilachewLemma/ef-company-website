@@ -5,8 +5,16 @@ import { FaHandPointRight } from "react-icons/fa";
 import {HiEye} from 'react-icons/hi'
 import {FiTarget} from 'react-icons/fi'
 import {RiHandCoinLine} from 'react-icons/ri'
+import Seo from "../../Seo";
 const Profile = () => {
   return (
+    <>
+    <Seo 
+    title="Our vision and missions"
+    description="our vision is meeting global and national standards and provide technological innovation for premium value in engineering service reliable results"
+    type="website"
+     />
+
     <div className={styles.wraperContainer}>
       <BackgroundImage title={"Our Vision"} isDetail={false} longTitle='' />
       <div className="bg-white px-3 px-lg-0 py-5">
@@ -118,6 +126,7 @@ const Profile = () => {
 
       <CompanyInfo />
     </div>
+    </>
   );
 };
 export default Profile;

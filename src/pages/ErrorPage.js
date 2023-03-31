@@ -1,7 +1,14 @@
 import image from '../assets/404.webp'
 import { NavLink } from 'react-router-dom'
+import Seo from '../Seo'
 const ErrorPage = () =>{
-    return <div className="note-found-page d-flex flex-column justify-content-lg-center">
+    return <>
+    <Seo 
+    title="Error page"
+    description="page not found "
+    type="website"
+     />
+    <div className="note-found-page d-flex flex-column justify-content-lg-center">
        <div className="align-self-center">
        <div>
        <img src={image} alt="404_not_found" className='img-fluid' />
@@ -12,5 +19,6 @@ const ErrorPage = () =>{
        </div>
        </div>
     </div>
+    </>
 }
 export default ErrorPage

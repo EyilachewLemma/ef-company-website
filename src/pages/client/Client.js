@@ -5,6 +5,7 @@ import CompanyInfom from '../home/CompanyInfo'
 import { useDispatch } from "react-redux"
 import { spinnerAction } from "../../stores/spinner"
 import apiCall from "../../url"
+import Seo from "../../Seo"
 import styles from "./Client.module.css"
 const Client =()=>{
     const [clients,setClients] = useState([])
@@ -35,6 +36,13 @@ useEffect(()=>{
 // eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
     return (
+        <>
+        <Seo 
+    title="Our Clients"
+    description="We are proud of always thinking in terms of what is best for our clients offering solutions that are not only theoretical but workable "
+    type="website"
+     />
+    
         <div className={styles.clientwraper}>
         <BackgroundImage title={'Clients'} isDetail={false} longTitle='' />
        <div className="bg-white py-lg-5">
@@ -51,6 +59,7 @@ useEffect(()=>{
         <CompanyInfom />
         </div>
         </div>
+        </>
     )
 }
 export default Client

@@ -5,6 +5,7 @@ import SingleImageCarousel from "../../components/SingleImageCarousel";
 import { spinnerAction } from "../../stores/spinner";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import Seo from '../../Seo';
 import apiCall from '../../url';
 import styles from "./Project.module.css";
 
@@ -33,6 +34,11 @@ const ProjectDetail = () => {
   console.log("services=",services)
   return (
     <>
+    <Seo 
+    title="Project details"
+    description="Our projects show what we have built in the past years including construction and ddesign of different projects"
+    type="article"
+     />
       <BackgroundImage
         title="Project"
         isDetail={true}

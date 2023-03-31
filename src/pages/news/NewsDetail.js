@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import ContactForm from "../contact/ContactForm";
 import { useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
+import Seo from '../../Seo';
 import styles from "./News.module.css";
 
 const NewsDetail = () => {
@@ -16,6 +17,11 @@ const NewsDetail = () => {
   },[news,id])
   return (
     <>
+    <Seo 
+    title="Nwes detail"
+    description="News and advertisements the describe about engineering and design tips and practices related to architectural design"
+    type="article"
+     />
       <BackgroundImage
         title="Service"
         isDetail={true}

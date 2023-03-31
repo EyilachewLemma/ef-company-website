@@ -6,6 +6,7 @@ import { useDispatch,useSelector } from "react-redux";
 import apiCall from "../../url";
 import styles from "./Gallery.module.css";
 import CompanyInfo from "../home/CompanyInfo";
+import Seo from "../../Seo";
 const Project = () => {
   const [filteredGalleries, setFilteredGalleries] = useState([])
     const [isAll,setIsAll] = useState(true)
@@ -101,6 +102,13 @@ const getCertificates = () =>{
     },[])
     console.log('filteredGalleries=',filteredGalleries)
   return (
+    <>
+    <Seo 
+    title="Galleries"
+    description="Our galleries show what we have built in the past years including construction and ddesign of different projects "
+    type="website"
+     />
+   
     <div className={styles.gallerWraper}>
       <BackgroundImage title={"Projects"} isDetail={false} longTitle='' />
       <div className="bg-white px-3 px-lg-0 pb-lg-5 py-5">
@@ -157,6 +165,7 @@ const getCertificates = () =>{
         <CompanyInfo />
       
     </div>
+    </>
   );
 };
 export default Project;

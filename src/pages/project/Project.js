@@ -7,6 +7,7 @@ import CompanyInfo from "../home/CompanyInfo";
 import { actions } from "../../stores/index";
 import { spinnerAction } from "../../stores/spinner";
 import Form from 'react-bootstrap/Form';
+import Seo from "../../Seo";
 
 import apiCall from "../../url/index";
 const Project = () => {
@@ -105,6 +106,12 @@ const Project = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
+    <>
+    <Seo 
+    title="Projects"
+    description="Our projects show what we have built in the past years including construction and ddesign of different projects"
+    type="website"
+     />
     <div className={styles.projectWraper}>
       <BackgroundImage title={"Projects"} isDetail={false} longTitle="" />
       <div className="bg-white px-3 px-lg-5 pb-lg-5 py-5">
@@ -239,6 +246,7 @@ const Project = () => {
 
       <CompanyInfo />
     </div>
+    </>
   );
 };
 export default Project;

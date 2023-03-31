@@ -13,6 +13,7 @@ import bgImage from "../../assets/endale.jpg";
 import { spinnerAction } from "../../stores/spinner.js";
 import { actions } from "../../stores/index";
 import { useDispatch, useSelector } from "react-redux";
+import Seo from "../../Seo";
 import apiCall from "../../url";
 const Home = () => {
   const news = useSelector((state) => state.news.news);
@@ -55,7 +56,13 @@ const Home = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div className="home-page-container">
+    <>
+    <Seo 
+    title="EF Architects and Engineers Consulting Plc"
+    description="EF Architects and Engineers consulting is a professional engineering firm staffed and organized to provide Architectural and Engineering consulting services. Established in 2015 by a group of young ambitious and competent Architects and Engineers "
+    type="website"
+     />
+        <div className="home-page-container">
       <div className="bg-white">
         <HomeCarosel />
 
@@ -231,6 +238,7 @@ const Home = () => {
         </section>
       </div>
     </div>
+    </>
   );
 };
 export default Home;

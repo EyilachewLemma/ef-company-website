@@ -3,9 +3,15 @@ import ContactForm from "./ContactForm";
 import {SlLocationPin} from 'react-icons/sl'
 import {HiOutlineMail} from 'react-icons/hi'
 import {FiPhoneCall} from 'react-icons/fi'
+import Seo from "../../Seo";
 const Contact = () => {
   return (
     <>
+    <Seo 
+    title="Contact us"
+    description="please be free to contact us. We are open to hear from you "
+    type="website"
+     />
       <BackgroundImage title={"Contact"} isDetail={false} longTitle='' />
       <div className="bg-white px-3 px-lg-0 py-5">
         <div className="container px-lg-5">

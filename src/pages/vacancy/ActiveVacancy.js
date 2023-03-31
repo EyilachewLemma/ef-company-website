@@ -3,6 +3,7 @@ import { spinnerAction } from "../../stores/spinner";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {TfiFaceSad} from 'react-icons/tfi'
+import Seo from "../../Seo";
 import apiCall from "../../url";
 const ActiveVacancy = () => {
   const [jobs,setJobs] = useState([])
@@ -26,6 +27,12 @@ useEffect(()=>{
 // eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
   return (
+    <>
+    <Seo 
+    title="Vacancy"
+    description="Vacancy announcement in EF Arcitect and Engineering Consalting plc"
+    type="website"
+     />
     <div className="px-3 px-lg-5 py-5 mb-lg-5">
     {
       jobs.length > 0 && 
@@ -72,6 +79,7 @@ useEffect(()=>{
             </div>
           }
     </div>
+    </>
   );
 };
 export default ActiveVacancy;

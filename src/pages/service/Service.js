@@ -7,6 +7,7 @@ import {spinnerAction} from '../../stores/spinner'
 import { useDispatch } from "react-redux";
 import apiCall from "../../url";
 import styles from './Service.module.css'
+import Seo from "../../Seo";
 const Services = () => {
   const [services,setServices] = useState([])
   const dispatch = useDispatch()
@@ -31,8 +32,13 @@ const Services = () => {
    fetchServices()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
-  console.log('services = ',services)
   return (
+    <>
+    <Seo 
+    title="Services"
+    description="Our services show what we are providing to our clients  in the past years including construction and ddesign of different projects"
+    type="website"
+     />
     <div className={styles.servicepage}>
      <div className="bg-white pb-lg-5">
      <BackgroundImage title={"Services"} isDetail={false} longTitle='' />
@@ -82,6 +88,7 @@ const Services = () => {
      </div>     
      <CompanyInfo />
       </div>
+      </>
   );
 };
 export default Services;

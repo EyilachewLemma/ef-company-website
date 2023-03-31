@@ -5,6 +5,7 @@ import CompanyInfom from '../home/CompanyInfo'
 import { useDispatch } from 'react-redux'
 import { spinnerAction } from '../../stores/spinner'
 import apiCall from '../../url'
+import Seo from '../../Seo'
 import styles from "./Client.module.css"
 
 
@@ -37,6 +38,12 @@ useEffect(()=>{
 // eslint-disable-next-line react-hooks/exhaustive-deps
 },[])
     return (
+        <>
+        <Seo 
+    title="Our Partners"
+    description="	We have brought together all EF Architects and Engineers Consulting plc. individual abilities in to our corporate culture. In working as a team that includes our clients and partners "
+    type="website"
+     />
         <div className={styles.clientwraper}>
         <BackgroundImage title={'Partners'} isDetail={false} longTitle="" />
        <div className="bg-white">
@@ -53,6 +60,7 @@ useEffect(()=>{
         <CompanyInfom />
         </div>
         </div>
+        </>
     )
 }
 export default Partners

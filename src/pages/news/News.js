@@ -6,6 +6,7 @@ import CompanyInfo from "../home/CompanyInfo";
 import { useDispatch, useSelector } from "react-redux";
 import { spinnerAction } from "../../stores/spinner";
 import { actions } from "../../stores";
+import Seo from "../../Seo";
 import apiCall from "../../url";
 const News = () => {
   const news = useSelector(state=>state.news.news)
@@ -27,6 +28,12 @@ const News = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   return (
+    <>
+    <Seo 
+    title="Nwes and Advertisement"
+    description="News and advertisements the describe about engineering and design tips and practices related to architectural design"
+    type="website"
+     />
     <div className={styles.newsWraper}>
       <BackgroundImage title={"News"} isDetail={false} longTitle='' />
       <div className="bg-white px-3 px-lg-0 pb-lg-5 py-5">
@@ -69,6 +76,7 @@ const News = () => {
         <CompanyInfo />
       
     </div>
+    </>
   );
 };
 export default News;

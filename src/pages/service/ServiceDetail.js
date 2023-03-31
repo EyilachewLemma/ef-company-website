@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { spinnerAction } from "../../stores/spinner";
 import apiCall from "../../url";
 import styles from "./Service.module.css";
-
+import Seo from "../../Seo";
 const ServiceDetail = () => {
   const [services,setServices] = useState([])
   const [service,setService] = useState({})
@@ -38,6 +38,11 @@ const ServiceDetail = () => {
   console.log('service detail=',services)
   return (
     <>
+    <Seo 
+    title="Service details"
+    description="Our services show what we are providing to our clients  in the past years including construction and ddesign of different projects"
+    type="article"
+     />
       <BackgroundImage
         title="Service"
         isDetail={true}

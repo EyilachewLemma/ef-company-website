@@ -6,11 +6,18 @@ import CompanyInfo from "../home/CompanyInfo";
 import OurTeams from "../home/OurTeams";
 import OurAttributs from "./OurAttributes"
 import { useNavigate } from "react-router-dom";
+import Seo from "../../Seo";
 import styles from "./About.module.css";
 const About = () => {
   const navigate = useNavigate();
   return (
-    <div className={styles.aboutWraper}>
+    <>
+    <Seo 
+    title="About us"
+    description="EF Architects and Engineers consulting is a professional engineering firm staffed and organized to provide Architectural and Engineering consulting services. Established in 2015 by a group of young ambitious and competent Architects and Engineers "
+    type="website"
+     />
+        <div className={styles.aboutWraper}>
       <div className="bg-white pb-lg-3">
         <BackgroundImage title={"About Us"} isDetail={false} longTitle="" />
         <section className="px-3">
@@ -135,6 +142,7 @@ const About = () => {
       </div>
       <CompanyInfo />
     </div>
+    </>
   );
 };
 export default About;
